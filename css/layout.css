@@ -1,11 +1,36 @@
-.container { width: min(100% - 2rem, var(--container-width)); margin-inline: auto; }
-.section { padding-block: clamp(4rem, 10vw, 8rem); }
-.section--hero { padding-top: clamp(5rem, 12vw, 11rem); padding-bottom: clamp(5rem, 12vw, 10rem); }
+/* H2 — layout global. Se afinan composiciones particulares en H3–H8. */
+.container {
+  width: min(calc(100% - 2 * var(--space-5)), var(--container-width));
+  margin-inline: auto;
+}
+.section { padding-block: var(--section-space); }
+.section--hero {
+  padding-top: clamp(5rem, 11vw, 10rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+}
 .hero-content { max-width: var(--container-width); }
-.hero-description, .section-intro { max-width: 45rem; }
-.metrics-grid, .skills-grid, .projects-grid, .principles-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+.hero-description, .section-intro { max-width: 44rem; }
+.metrics-grid, .skills-grid, .projects-grid, .principles-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+}
 .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
-.timeline { display: grid; gap: var(--space-8); margin: 0; padding: 0; list-style: none; }
-.timeline li { display: grid; grid-template-columns: minmax(5rem, 7rem) minmax(0, 1fr); gap: var(--space-4); }
-.site-footer { background: #101414; color: var(--color-on-dark); padding-block: var(--space-12); }
+.timeline {
+  display: grid;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.timeline li {
+  display: grid;
+  grid-template-columns: minmax(5rem, 7rem) minmax(0, 1fr);
+  gap: var(--space-4);
+}
+.site-footer {
+  background: var(--color-surface);
+  color: var(--color-on-dark);
+  padding-block: var(--space-12);
+}
 .footer-inner { display: grid; gap: var(--space-6); }

@@ -1,26 +1,76 @@
+/* H2 — reglas base y criterios globales de legibilidad y accesibilidad. */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-padding-top: calc(var(--header-height) + 1rem); }
+html {
+  scroll-padding-top: calc(var(--header-height) + var(--space-4));
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 body {
   margin: 0;
-  min-width: 0;
-  background: #149d9a;
+  min-width: 320px;
   color: var(--color-ink);
   font-family: var(--font-body);
-  line-height: 1.55;
-  background-image: linear-gradient(120deg, rgb(5 126 128 / 8%), rgb(190 241 236 / 20%)), url('../assets/backgrounds/fondo-portfolio.webp');
-  background-position: center top;
+  font-size: var(--type-base);
+  line-height: var(--line-body);
+  background-color: var(--color-bg-fallback);
+  /* Un mismo fondo de base entre secciones, sin saltos cromáticos. */
+  background-image: url('../assets/backgrounds/fondo-portfolio.webp');
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
 }
-img, video, svg { display: block; max-width: 100%; }
-a { color: inherit; text-underline-offset: 0.18em; }
+::selection { background: var(--color-selection); color: var(--color-ink); }
+img, picture, video, svg { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; text-underline-offset: 0.19em; }
+a:hover { text-decoration-thickness: 0.13em; }
 button, input, textarea, select { font: inherit; }
 button { cursor: pointer; }
-:focus-visible { outline: 3px solid #121b1b; outline-offset: 4px; }
-.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-.skip-link { position: fixed; z-index: 100; top: 0.5rem; left: 0.5rem; padding: 0.75rem 1rem; background: #fff; color: #111; transform: translateY(-150%); }
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 5px var(--color-ink);
+}
+/* Si el elemento está sobre un fondo claro, el contraste del foco se mantiene. */
+:where(main) :focus-visible { outline-color: var(--color-ink); box-shadow: 0 0 0 5px var(--color-focus); }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-on-dark);
+  color: var(--color-ink);
+  border-radius: var(--radius-sm);
+  transform: translateY(-160%);
+}
 .skip-link:focus { transform: translateY(0); }
-.section { scroll-margin-top: calc(var(--header-height) + 1rem); }
+.section { scroll-margin-top: calc(var(--header-height) + var(--space-4)); }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+@media (max-width: 767px) {
+  /* Background attachment: fixed no funciona bien en algunos navegadores mobile. */
+  body { background-attachment: scroll; background-size: auto 100vh; background-repeat: repeat-y; background-position: 49% top; }
 }

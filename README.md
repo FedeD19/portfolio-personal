@@ -2,7 +2,7 @@
 
 Trabajo Final de Diseño UX/UI (2026) · Licenciatura en Sistemas de Información.
 
-> **Estado actual: H1/10 — Inicialización del proyecto.** Este commit contiene la arquitectura, el contenido preliminar y estilos base; **no representa todavía la reproducción final del prototipo de Figma**.
+> **Estado actual: H2/10 — Design System y estilos globales.** El sitio conserva la estructura de H1 y ahora incorpora tokens visuales, tipografía, color y espaciado basados en las exportaciones de Figma. **Todavía no es una reproducción final del prototipo.**
 
 ## Objetivo
 
@@ -40,14 +40,15 @@ proyectos/    página interna del caso de estudio (H9)
 docs/         documentación y capturas del proceso UX/UI
 ```
 
-## Accesibilidad y responsive (base H1)
+## Accesibilidad y responsive (base H1 + H2)
 
 - Etiquetas HTML semánticas, `lang="es"`, un único `<h1>` y títulos jerárquicos.
 - Enlace «Saltar al contenido», focus visible y navegación mediante teclado.
 - Menú mobile con botón, `aria-expanded`, `aria-controls`, Escape y cierre al seleccionar enlace.
 - Sin JS, la navegación móvil queda visible (degradación progresiva).
 - CSS mobile-first con puntos de control en 768 y 1200 px; también se probará a 375, 768 y 1280 px.
-- Respeto a `prefers-reduced-motion` para scroll suave.
+- Respeto a `prefers-reduced-motion` para scroll suave, animaciones y transiciones.
+- Fondo turquesa original conservado y distribución tipográfica/espaciado centralizada en `css/tokens.css`.
 
 **Pendiente:** validar contraste WCAG 2.2 AA y Lighthouse en mobile (≥ 90 en las 4 categorías) al finalizar la implementación. Este H1 no pretende certificar su cumplimiento definitivo.
 
@@ -55,6 +56,8 @@ docs/         documentación y capturas del proceso UX/UI
 
 - Prototipos de Figma: seis pantallas desktop y seis pantallas mobile, aportadas para este trabajo.
 - TP3: 20 ejercicios en tres bloques (básico, intermedio y medio/avanzado); incluye una landing integradora en el ejercicio 20.
+- Design System H2: ver [`docs/design-system.md`](docs/design-system.md) para colores, tipografía, espaciado y decisiones; los valores todavía pueden afinarse contra Figma.
+- Fuente principal: Inter mediante Google Fonts (`display=swap`), con alternativas locales de sistema.
 - Fondo: imagen aportada junto con el prototipo; confirmar crédito/licencia en la entrega final.
 - Imagen de Open Graph: captura del prototipo **provisional**; sustituirla por la captura del sitio final y cambiar `og:image` a una URL HTTPS absoluta en H10.
 - Fotografías de proyectos, perfil y enlaces a demos/repositorios: se agregarán en H6 y H8.
@@ -62,7 +65,7 @@ docs/         documentación y capturas del proceso UX/UI
 
 ## Próximos hitos
 
-- H2: afinar design tokens según Figma.
+- H2: design tokens, tipografía, fondo y estilos globales (completado).
 - H3: header/navegación final desktop y móvil.
 - H4: Hero y métricas.
 - H5: Skills.
@@ -82,4 +85,4 @@ docs/         documentación y capturas del proceso UX/UI
 
 ## Uso de IA
 
-La estructura inicial del proyecto y los estilos/scripts base de H1 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
+La estructura inicial de H1 y los tokens/estilos globales de H2 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.

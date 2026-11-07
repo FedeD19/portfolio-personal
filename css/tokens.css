@@ -1,23 +1,66 @@
-/* H1: tokens iniciales. H2 ajustará los valores a Figma. */
+/*
+ * H2 — Design System / tokens globales.
+ * Valores ajustados visualmente con las exportaciones de Figma.
+ * Pueden afinarse contra los valores numéricos del panel Design de Figma.
+ * Escala espacial: base 4 px (rem basado en 16 px).
+ */
 :root {
   color-scheme: light;
-  --color-ink: #101919;
-  --color-muted: #244342;
-  --color-surface: #10201f;
-  --color-on-dark: #f3fcfa;
-  --color-accent: #83e8de;
-  --color-line: rgb(16 25 25 / 23%);
-  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Colores principales */
+  --color-ink: #101414;
+  --color-muted: #173b3a;
+  --color-on-dark: #f0faf8;
+  --color-surface: #111313;
+  --color-surface-soft: #163b3a;
+  --color-accent: #8cece7;
+  --color-accent-deep: #007f80;
+  --color-line: rgb(16 20 20 / 35%);
+  --color-line-inverse: rgb(240 250 248 / 28%);
+  --color-focus: #fff8b8;
+  --color-selection: #adf7f1;
+  --color-bg-fallback: #079c9b;
+  --color-header: rgb(14 35 34 / 94%);
+
+  /* Familia principal aproximada desde la referencia Figma.
+     Importada desde Google Fonts con font-display: swap. */
+  --font-body: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+  /* Escala tipográfica (fluida cuando corresponde) */
+  --type-xs: 0.75rem;                        /* 12 px */
+  --type-sm: 0.875rem;                       /* 14 px */
+  --type-base: 1rem;                         /* 16 px */
+  --type-lead: clamp(1.05rem, 1.5vw, 1.3rem);
+  --type-h1: clamp(2.75rem, 5.2vw, 6rem);
+  --type-h2: clamp(2rem, 3.6vw, 4.1rem);
+  --type-h3: clamp(1.125rem, 1.6vw, 1.5rem);
+  --line-tight: 1.06;
+  --line-body: 1.55;
+  --tracking-heading: -0.055em;
+  --tracking-label: 0.075em;
+
+  /* Sistema de espaciado de 4 / 8 px */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1rem;
+  --space-5: 1.25rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
+  --space-10: 2.5rem;
   --space-12: 3rem;
   --space-16: 4rem;
-  --radius-sm: 0.4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Radios, dimensiones y animación */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
   --radius-pill: 999px;
   --container-width: 1120px;
   --header-height: 4.75rem;
+  --section-space: clamp(4.5rem, 9vw, 8rem);
+  --duration-fast: 160ms;
+  --duration-base: 240ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
