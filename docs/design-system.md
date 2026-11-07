@@ -43,4 +43,4 @@ Escala basada en múltiplos de 4 y 8 píxeles (`--space-1` a `--space-24`). Cont
 
 ## Próximos pasos
 
-H3 implementará la navbar flotante horizontal en desktop y la cabecera redondeada mobile; H4 afinará alturas y posiciones del Hero y la franja de métricas. H5–H8 cerrarán el diseño por sección; H9 el caso de estudio; H10 validación y despliegue.
+H3 ya implementó la navbar flotante horizontal en desktop, la cabecera redondeada mobile y un fondo fijo sin repetición vertical. H4 afinará alturas y posiciones del Hero y la franja de métricas. H5–H8 cerrarán el diseño por sección; H9 el caso de estudio; H10 validación y despliegue.

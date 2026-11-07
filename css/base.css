@@ -1,6 +1,7 @@
 /* H2 — reglas base y criterios globales de legibilidad y accesibilidad. */
 *, *::before, *::after { box-sizing: border-box; }
 html {
+  background-color: var(--color-bg-fallback);
   scroll-padding-top: calc(var(--header-height) + var(--space-4));
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -12,14 +13,19 @@ body {
   font-family: var(--font-body);
   font-size: var(--type-base);
   line-height: var(--line-body);
-  background-color: var(--color-bg-fallback);
-  /* Un mismo fondo de base entre secciones, sin saltos cromáticos. */
-  background-image: url('../assets/backgrounds/fondo-portfolio.webp');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  /* H3: una sola textura detrás de toda la página, sin repeat-y en mobile. */
+  background: transparent;
+  isolation: isolate;
   -webkit-font-smoothing: antialiased;
+}
+/* Capa fija: el contenido se desplaza sin que la imagen se reinicie por secciones. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--color-bg-fallback) url('../assets/backgrounds/fondo-portfolio.webp') center / cover no-repeat;
 }
 ::selection { background: var(--color-selection); color: var(--color-ink); }
 img, picture, video, svg { display: block; max-width: 100%; }
@@ -69,8 +75,4 @@ button { cursor: pointer; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
-@media (max-width: 767px) {
-  /* Background attachment: fixed no funciona bien en algunos navegadores mobile. */
-  body { background-attachment: scroll; background-size: auto 100vh; background-repeat: repeat-y; background-position: 49% top; }
 }

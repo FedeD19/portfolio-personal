@@ -20,7 +20,8 @@
   --color-focus: #fff8b8;
   --color-selection: #adf7f1;
   --color-bg-fallback: #079c9b;
-  --color-header: rgb(14 35 34 / 94%);
+  --color-header: rgb(14 35 34 / 95%);
+  --color-header-glass: rgb(17 39 43 / 42%);
 
   /* Familia principal aproximada desde la referencia Figma.
      Importada desde Google Fonts con font-display: swap. */
@@ -58,7 +59,10 @@
   --radius-md: 0.75rem;
   --radius-pill: 999px;
   --container-width: 1120px;
-  --header-height: 4.75rem;
+  --header-height: 6rem; /* margen de seguridad para las anclas */
+  --nav-max-width: 42rem;
+  --nav-height-mobile: 4rem;
+  --nav-height-desktop: 3.5rem;
   --section-space: clamp(4.5rem, 9vw, 8rem);
   --duration-fast: 160ms;
   --duration-base: 240ms;

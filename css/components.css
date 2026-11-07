@@ -1,25 +1,34 @@
-/* H2 — componentes de base conectados a los design tokens. */
-/* H3 convertirá la cabecera al menú flotante del prototipo. */
+/* H3 — cabecera accesible y responsive, fiel a la navegación de Figma. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--color-header);
+  padding-top: var(--space-3);
   color: var(--color-on-dark);
+  background: transparent;
 }
 .site-header__inner {
-  min-height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-4);
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: min(calc(100% - 2 * var(--space-3)), var(--nav-max-width));
+  min-height: var(--nav-height-mobile);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+  border: 1px solid var(--color-line-inverse);
+  border-radius: var(--radius-pill);
+  background: var(--color-header);
+  box-shadow: 0 4px 24px rgb(0 0 0 / 10%);
 }
 .brand {
+  flex: 0 0 auto;
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.625rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
   text-decoration: none;
-  letter-spacing: -0.05em;
 }
 .site-nav__list, .footer-links {
   display: flex;
@@ -31,17 +40,27 @@
   list-style: none;
 }
 .site-nav a, .footer-links a {
-  display: inline-block;
-  padding: 0.55rem 0.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.5rem;
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
+  transition: color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out);
 }
-.site-nav a:hover, .footer-links a:hover { text-decoration: underline; }
-.site-nav a:active, .footer-links a:active { color: var(--color-accent); }
+.site-nav a { border-radius: var(--radius-pill); font-size: var(--type-sm); font-weight: 600; }
+.site-nav a:hover { color: white; background: rgb(255 255 255 / 13%); }
+.site-nav a[aria-current="location"] { color: #fff; background: rgb(255 255 255 / 12%); font-weight: 750; }
+.site-nav a:active { color: var(--color-accent); background: rgb(255 255 255 / 20%); }
+.footer-links a:hover { text-decoration: underline; }
+.footer-links a:active { color: var(--color-accent); }
+/* Botón nativo: Enter y Space funcionan sin listeners adicionales. */
 .menu-toggle {
   display: none;
+  flex: 0 0 auto;
   width: 2.75rem;
   height: 2.75rem;
+  padding: 0;
   border: 1px solid var(--color-line-inverse);
   border-radius: var(--radius-pill);
   background: transparent;
@@ -49,9 +68,22 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
+  transition: background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
 }
-.menu-toggle span { display: block; width: 1.1rem; height: 2px; background: currentColor; }
+.menu-toggle:hover { background: rgb(255 255 255 / 13%); border-color: var(--color-on-dark); }
+.menu-toggle:active { background: rgb(255 255 255 / 23%); }
+.menu-toggle span {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform var(--duration-fast) var(--ease-out), opacity var(--duration-fast) var(--ease-out);
+}
+.menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
 .eyebrow {
   text-transform: uppercase;
   font-size: var(--type-xs);
