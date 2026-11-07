@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e2525">
+  <meta name="description" content="Portfolio de Federico Dri, estudiante de Licenciatura en Sistemas de Información. Proyectos académicos de desarrollo web y diseño UX/UI.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="Federico Dri | Portfolio personal">
+  <meta property="og:description" content="Proyectos de desarrollo web, HTML, CSS y UX/UI realizados durante mi formación.">
+  <!-- TODO H10: reemplazar con la URL HTTPS absoluta tras publicar el sitio. -->
+  <meta property="og:image" content="assets/og/portada-prototipo.webp">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js" defer></script>
+  <title>Federico Dri | Portfolio personal</title>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#inicio" aria-label="Federico Dri, ir al inicio">FD</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="navegacion-principal" aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="navegacion-principal" aria-label="Navegación principal">
+        <ul class="site-nav__list">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- H4: ajustes finales de Hero y métricas según los frames de Figma. -->
+    <section class="section section--hero" id="inicio" aria-labelledby="titulo-inicio">
+      <div class="container hero-content">
+        <p class="eyebrow">Diseño con intención</p>
+        <h1 id="titulo-inicio">Mi nombre es Federico Dri.</h1>
+        <p class="hero-role">Estudiante de Licenciatura en Sistemas de Información.</p>
+        <p class="hero-description">En constante formación, aplicando mis estudios en soluciones digitales mediante el uso de código limpio y buenas prácticas.</p>
+        <div class="actions">
+          <a class="button button--primary" href="#proyectos">Ver proyectos</a>
+          <a class="button button--secondary" href="#contacto">Hablemos</a>
+        </div>
+        <p class="availability">Disponibilidad: consultar</p>
+        <p class="location">Entre Ríos, Argentina · GMT-3</p>
+      </div>
+    </section>
+
+    <section class="section section--metrics" id="metricas" aria-labelledby="titulo-metricas">
+      <div class="container">
+        <h2 class="visually-hidden" id="titulo-metricas">Mi trabajo en números</h2>
+        <div class="metrics-grid">
+          <div class="metric"><strong>3</strong><span>Proyectos académicos</span></div>
+          <div class="metric"><strong>20</strong><span>Ejercicios de HTML y CSS</span></div>
+          <div class="metric"><strong>3</strong><span>Áreas de especialidad</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- H5: desarrollar la sección Skills y los componentes definitivos. -->
+    <section class="section" id="skills" aria-labelledby="titulo-skills">
+      <div class="container">
+        <p class="eyebrow">Skills / Mis especialidades</p>
+        <h2 id="titulo-skills">Lo que puedo aportar.</h2>
+        <div class="skills-grid">
+          <article class="info-card"><h3>01 / Diseño web</h3><p>Sitios claros, accesibles y adaptables a cada pantalla.</p><p class="tags">HTML · CSS · Figma</p></article>
+          <article class="info-card"><h3>02 / UI / UX Design</h3><p>Interfaces consistentes y flujos centrados en las personas.</p><p class="tags">Figma · Design systems</p></article>
+          <article class="info-card"><h3>03 / Lógica de programación y algoritmos</h3><p>Organización, resolución de problemas y fundamentos de programación.</p><p class="tags">Algoritmos · Programación</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- H6: sustituir los espacios visuales por capturas auténticas de cada trabajo. -->
+    <section class="section" id="proyectos" aria-labelledby="titulo-proyectos">
+      <div class="container">
+        <p class="eyebrow">Trabajos académicos · 2026</p>
+        <h2 id="titulo-proyectos">Proyectos recientes</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-card__media" role="img" aria-label="Imagen de Coffea pendiente de incorporar"></div>
+            <div class="project-card__body">
+              <p class="project-card__year">2026 · Sitio web responsive</p>
+              <h3>Coffea — Coffee Shop</h3>
+              <p>Maquetación de una landing page de cafetería a partir de un diseño de Figma.</p>
+              <p class="tags">HTML · CSS · Figma</p>
+              <p class="pending-note">Demo y repositorio: enlaces por incorporar.</p>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__media" role="img" aria-label="Imagen de Cubri Seguros pendiente de incorporar"></div>
+            <div class="project-card__body">
+              <p class="project-card__year">2026 · Checkout interactivo</p>
+              <h3>Cubri Seguros</h3>
+              <p>Flujo multipaso para contratar un seguro, con validaciones y pago simulado.</p>
+              <p class="tags">UX/UI · JavaScript · Basecoat UI</p>
+              <p class="pending-note">H9: caso de estudio; demo y repositorio por enlazar.</p>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__media" role="img" aria-label="Imagen del TP3 de HTML y CSS pendiente de incorporar"></div>
+            <div class="project-card__body">
+              <p class="project-card__year">2026 · Fundamentos web</p>
+              <h3>TP3 — Fundamentos de HTML y CSS</h3>
+              <p>Veinte ejercicios progresivos sobre HTML semántico, CSS, Flexbox, Grid, responsive y formularios.</p>
+              <p class="tags">HTML · CSS · Flexbox · Grid</p>
+              <p class="pending-note">Capturas y enlaces por incorporar.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- H7: completar la línea de tiempo usando únicamente experiencias reales. -->
+    <section class="section" id="experiencia" aria-labelledby="titulo-experiencia">
+      <div class="container">
+        <p class="eyebrow">Experiencia / Trayectoria</p>
+        <h2 id="titulo-experiencia">Diseñar. Aprender. Seguir creciendo.</h2>
+        <ol class="timeline">
+          <li><span class="timeline__date">2026</span><div><h3>Cursada de Diseño UX/UI</h3><p>Desarrollo de proyectos académicos y prototipos de interfaces.</p><p>Práctica de maquetación responsive con HTML, CSS y JavaScript.</p></div></li>
+          <li><span class="timeline__date">2023–actualidad</span><div><h3>Licenciatura en Sistemas de Información</h3><p>Formación universitaria en desarrollo y fundamentos de sistemas.</p><p>Aplicación de programación, algoritmos y diseño en trabajos prácticos.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- H8: incorporar retrato y revisar el texto definitivo. -->
+    <section class="section" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+      <div class="container">
+        <p class="eyebrow">Sobre mí</p>
+        <h2 id="titulo-sobre-mi">Un poco sobre mí.</h2>
+        <p class="section-intro">Soy estudiante de Licenciatura en Sistemas de Información. Me interesa aprender y aplicar nuevos conocimientos mediante proyectos reales y académicos.</p>
+        <h3>Tres principios que me guían</h3>
+        <div class="principles-grid">
+          <article class="info-card"><h4>01 / Claridad</h4><p>Cada decisión debe ayudar a entender y avanzar.</p></article>
+          <article class="info-card"><h4>02 / Curiosidad</h4><p>Escuchar y preguntar antes de dar una solución.</p></article>
+          <article class="info-card"><h4>03 / Colaboración</h4><p>Compartir el proceso hace que el resultado sea mejor.</p></article>
+        </div>
+        <!-- TODO H8: imagen personal con texto alternativo significativo. -->
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="container">
+        <p class="eyebrow">Contacto / Construyamos juntos</p>
+        <h2 id="titulo-contacto">Hagamos algo que importe.</h2>
+        <p class="section-intro">¿Tenés un proyecto en mente? Contame qué querés construir y encontremos la mejor forma de hacerlo.</p>
+        <a class="contact-email" href="mailto:federicopauldri@gmail.com">federicopauldri@gmail.com</a>
+        <p class="pending-note">TODO H8: agregar URLs reales de LinkedIn y otra red social.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Federico Dri</strong><p>Portfolio personal · HTML, CSS y JavaScript vanilla.</p></div>
+      <nav aria-label="Navegación de pie de página">
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <small>© 2026 Federico Dri. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+</body>
+</html>

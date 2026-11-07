@@ -1,0 +1,23 @@
+/* H1: tokens iniciales. H2 ajustará los valores a Figma. */
+:root {
+  color-scheme: light;
+  --color-ink: #101919;
+  --color-muted: #244342;
+  --color-surface: #10201f;
+  --color-on-dark: #f3fcfa;
+  --color-accent: #83e8de;
+  --color-line: rgb(16 25 25 / 23%);
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --radius-sm: 0.4rem;
+  --radius-pill: 999px;
+  --container-width: 1120px;
+  --header-height: 4.75rem;
+}
