@@ -48,19 +48,23 @@
   </header>
 
   <main id="contenido">
-    <!-- H4: ajustes finales de Hero y métricas según los frames de Figma. -->
+    <!-- H4: Hero y métricas basados en las exportaciones desktop 1920px y mobile 390px. -->
     <section class="section section--hero" id="inicio" aria-labelledby="titulo-inicio">
       <div class="container hero-content">
-        <p class="eyebrow">Diseño con intención</p>
-        <h1 id="titulo-inicio">Mi nombre es Federico Dri.</h1>
-        <p class="hero-role">Estudiante de Licenciatura en Sistemas de Información.</p>
-        <p class="hero-description">En constante formación, aplicando mis estudios en soluciones digitales mediante el uso de código limpio y buenas prácticas.</p>
-        <div class="actions">
-          <a class="button button--primary" href="#proyectos">Ver proyectos</a>
-          <a class="button button--secondary" href="#contacto">Hablemos</a>
+        <div class="hero-main">
+          <p class="eyebrow hero-eyebrow">Diseño con intención</p>
+          <h1 class="hero-title" id="titulo-inicio"><span class="hero-title__line">Mi nombre</span> <span class="hero-title__line">es Federico</span> <span class="hero-title__line">Dri.</span></h1>
+          <p class="hero-role">Estudiante de Licenciatura en Sistemas de Información.</p>
+          <p class="hero-description">En constante formación, aplicando mis estudios en soluciones digitales mediante el uso de código limpio y buenas prácticas.</p>
+          <div class="actions hero-actions">
+            <a class="button button--primary" href="#proyectos">Ver proyectos <span class="button__arrow" aria-hidden="true">↗</span></a>
+            <a class="button button--secondary" href="#contacto">Hablemos <span class="button__arrow" aria-hidden="true">↗</span></a>
+          </div>
         </div>
-        <p class="availability">Disponibilidad: consultar</p>
-        <p class="location">Entre Ríos, Argentina · GMT-3</p>
+        <div class="hero-meta">
+          <p class="availability">Disponibilidad: consultar</p>
+          <p class="location">Entre Ríos, Argentina · GMT-3</p>
+        </div>
       </div>
     </section>
 
@@ -68,8 +72,9 @@
       <div class="container">
         <h2 class="visually-hidden" id="titulo-metricas">Mi trabajo en números</h2>
         <div class="metrics-grid">
+          <!-- Cifras académicas verificables: no se atribuyen años de experiencia laboral. -->
           <div class="metric"><strong>3</strong><span>Proyectos académicos</span></div>
-          <div class="metric"><strong>20</strong><span>Ejercicios de HTML y CSS</span></div>
+          <div class="metric"><strong>20</strong><span>Ejercicios HTML y CSS</span></div>
           <div class="metric"><strong>3</strong><span>Áreas de especialidad</span></div>
         </div>
       </div>

@@ -44,3 +44,13 @@ Escala basada en múltiplos de 4 y 8 píxeles (`--space-1` a `--space-24`). Cont
 ## Próximos pasos
 
 H3 ya implementó la navbar flotante horizontal en desktop, la cabecera redondeada mobile y un fondo fijo sin repetición vertical. H4 afinará alturas y posiciones del Hero y la franja de métricas. H5–H8 cerrarán el diseño por sección; H9 el caso de estudio; H10 validación y despliegue.
+
+
+## H4 — Hero y métricas
+
+- Título del Hero en tres renglones, con escala fluida y alineación izquierda.
+- CTA negros en dos columnas en desktop y apilados a ancho completo en mobile, manteniendo su forma rectangular.
+- La ubicación y disponibilidad se separaron semánticamente del bloque de presentación para que puedan ocupar el pie del Hero en mobile.
+- Métricas sobre franja negra continua: distribución horizontal tanto desktop como mobile.
+- Se usan cifras académicas verificables, sin inventar experiencia profesional.
+- El contenido y posición fueron ajustados con referencias exportadas de Figma a 1920 y 390 px.

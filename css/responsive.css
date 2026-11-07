@@ -27,8 +27,10 @@
   .js .site-nav.is-open { display: block; }
   .site-nav__list { flex-direction: column; align-items: stretch; gap: var(--space-1); }
   .site-nav a { justify-content: flex-start; min-height: 2.75rem; padding: var(--space-3); }
-  .hero-content h1 { max-width: 14ch; }
-  .actions { flex-direction: column; align-items: stretch; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 0.875rem; }
+  .hero-actions .button { width: 100%; }
+  /* A 320px la segunda línea del título debe caber sin overflow. */
+  .hero-title { font-size: clamp(2.35rem, 12.8vw, 3.125rem); }
 }
 @media (min-width: 768px) {
   .container { width: min(calc(100% - 2 * var(--space-12)), var(--container-width)); }
@@ -45,7 +47,21 @@
   .site-nav { flex: 1 1 auto; min-width: 0; }
   .site-nav__list { justify-content: space-between; flex-wrap: nowrap; gap: var(--space-1); }
   .site-nav a { font-size: var(--type-sm); padding-inline: clamp(0.35rem, 0.8vw, 0.75rem); white-space: nowrap; }
-  .metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  /* A partir de tablet el Hero es más compacto, con la disponibilidad cerca de los CTA. */
+  .section--hero { min-height: 51rem; padding-top: var(--space-16); padding-bottom: var(--space-16); }
+  .hero-content { display: block; }
+  .hero-eyebrow { margin-bottom: var(--space-10); }
+  .hero-title { font-size: clamp(4rem, 5.05vw, 6rem); line-height: 1.22; margin-bottom: var(--space-5); }
+  .hero-role { font-size: clamp(1.125rem, 1.5vw, 1.6rem); margin-bottom: var(--space-6); }
+  .hero-description { font-size: clamp(1rem, 1.1vw, 1.15rem); line-height: 1.45; }
+  .hero-actions { margin-top: var(--space-12); gap: var(--space-5); }
+  .hero-actions .button:first-child { min-width: 14.5rem; }
+  .hero-actions .button:nth-child(2) { min-width: 13.25rem; }
+  .hero-meta { margin-top: var(--space-10); }
+  .section--metrics > .container { width: min(calc(100% - 2 * var(--space-12)), 105.75rem); }
+  .metrics-grid { display: flex; justify-content: space-between; gap: var(--space-4); }
+  .metric { flex: 0 1 15.625rem; }
+  .metric span { font-size: var(--type-base); }
   .skills-grid, .principles-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -53,6 +69,20 @@
 }
 @media (min-width: 1200px) {
   .section { padding-block: var(--space-24); }
-  .section--hero { padding-top: calc(var(--space-24) + var(--space-16)); padding-bottom: var(--space-24); }
+  .section--metrics { padding-block: var(--space-12) var(--space-8); }
+  .section--hero { min-height: 58.25rem; padding-top: var(--space-24); padding-bottom: var(--space-12); }
+  .hero-eyebrow { margin-bottom: var(--space-12); }
+  .hero-title { font-size: clamp(4.2rem, 5vw, 6rem); line-height: 1.2; margin-bottom: var(--space-6); }
+  .hero-role { font-size: clamp(1.2rem, 1.4vw, 1.6rem); }
+  .hero-description { max-width: 36rem; }
+  .hero-actions { margin-top: var(--space-16); }
+  .section--metrics > .container { width: min(calc(100% - 12rem), 105.75rem); }
   .projects-grid { column-gap: var(--space-16); row-gap: var(--space-12); }
+}
+
+/* Dispositivos especialmente estrechos y zoom: limitar el ancho del título. */
+@media (max-width: 359px) {
+  .section--hero > .container { width: calc(100% - 2.5rem); }
+  .hero-title { font-size: clamp(2.1rem, 11.8vw, 2.6rem); }
+  .metric span { font-size: 0.78rem; }
 }

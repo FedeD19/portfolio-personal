@@ -2,7 +2,7 @@
 
 Trabajo Final de Diseño UX/UI (2026) · Licenciatura en Sistemas de Información.
 
-> **Estado actual: H3/10 — Header y navegación responsive.** Navbar flotante desktop y cápsula mobile con menú desplegable; el fondo turquesa ahora se mantiene continuo, sin reinicios de imagen. El Hero y las demás secciones todavía tienen estilos provisionales hasta H4–H8.
+> **Estado actual: H4/10 — Hero y métricas.** Navbar H3 intacta y primera pantalla adaptada a desktop y mobile según las exportaciones de Figma. Skills y las siguientes secciones permanecen provisionales hasta H5–H8.
 
 ## Objetivo
 
@@ -65,6 +65,16 @@ docs/         documentación y capturas del proceso UX/UI
 - Fotografías de proyectos, perfil y enlaces a demos/repositorios: se agregarán en H6 y H8.
 - Datos de experiencia, métricas y presentación: revisar junto con los textos personales definitivos antes de publicar.
 
+## H4 — Hero y Métricas
+
+- `index.html`: el Hero ahora tiene tres líneas explícitas de título, agrupación de presentación y área de disponibilidad independiente. Ambos CTA son anclas nativas a `#proyectos` y `#contacto`.
+- `css/layout.css`, `components.css` y `responsive.css`: maquetación mobile-first con área principal y datos de disponibilidad al pie de la primera pantalla mobile; desktop coloca el contenido a la izquierda y aproxima la distribución del frame 1920 × 1200.
+- Mobile (referencia 390 × 1386): botones negros a ancho completo, título grande en tres líneas y **tres métricas en una sola fila**, con mínimo de alto para mantener el espacio del prototipo. En dispositivos de menos altura hará falta desplazarse para ver las métricas; es intencional.
+- Desktop (referencia 1920 × 1200): hero alineado al contenedor de 1120px, botones horizontales y barra oscura de métricas de ancho completo.
+- Los indicadores de H3 no se duplicaron ni se reescribió JavaScript.
+- Para evitar atribuir experiencia laboral no demostrada, las métricas muestran **3 proyectos académicos**, **20 ejercicios HTML/CSS** y **3 áreas de especialidad**, en lugar de los años de experiencia que todavía aparecen en el Figma.
+- El diseño requiere **validación visual con Live Server** a 375px, 390px, 768px, 1280px y 1920px, además de zoom al 200%, navegación por teclado y ausencia de scroll horizontal. H4 no equivale a certificación WCAG AA ni Lighthouse.
+
 ## H3 — navegación y pruebas locales
 
 - A partir de **768 px**: menú horizontal flotante en cápsula translúcida centrada.
@@ -78,7 +88,7 @@ docs/         documentación y capturas del proceso UX/UI
 
 - H2: design tokens, tipografía, fondo y estilos globales (completado).
 - H3: header/navegación final desktop y móvil; corrección del fondo (completado).
-- H4: Hero y métricas.
+- H4: Hero y métricas (completado).
 - H5: Skills.
 - H6: tarjetas de los tres proyectos, capturas y enlaces.
 - H7: experiencia/formación.
@@ -96,4 +106,4 @@ docs/         documentación y capturas del proceso UX/UI
 
 ## Uso de IA
 
-La estructura H1, los estilos globales H2 y la navegación responsive H3 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
+La estructura H1, los estilos globales H2, la navegación H3 y la composición Hero/Métricas H4 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.

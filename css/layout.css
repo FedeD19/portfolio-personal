@@ -4,12 +4,30 @@
   margin-inline: auto;
 }
 .section { padding-block: var(--section-space); }
+/* H4 — mobile first. El alto reproduce el ritmo de la pantalla de 390 × 1386.
+   La sección se estira si el texto aumenta de tamaño por accesibilidad. */
 .section--hero {
-  padding-top: clamp(5rem, 11vw, 10rem);
-  padding-bottom: clamp(5rem, 9vw, 8rem);
+  display: flex;
+  min-height: 69.5rem;
+  padding-top: calc(var(--space-12) + var(--space-2));
+  padding-bottom: var(--space-6);
 }
-.hero-content { max-width: var(--container-width); }
-.hero-description, .section-intro { max-width: 44rem; }
+.section--hero > .container {
+  width: min(calc(100% - 3rem), var(--container-width));
+}
+/* H4 fix: no hacer crecer horizontalmente el hijo flex.
+   Se respeta el ancho maximo del .container y los margenes auto lo centran. */
+.hero-content {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  gap: var(--space-16);
+}
+.hero-main { min-width: 0; }
+.hero-description { max-width: 37rem; }
+.section-intro { max-width: 44rem; }
 .metrics-grid, .skills-grid, .projects-grid, .principles-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -34,3 +52,7 @@
   padding-block: var(--space-12);
 }
 .footer-inner { display: grid; gap: var(--space-6); }
+
+/* La barra de métricas conserva tres columnas incluso en mobile. */
+.section--metrics > .container { width: min(calc(100% - 3rem), 105.75rem); }
+.metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
