@@ -56,3 +56,8 @@
 /* La barra de métricas conserva tres columnas incluso en mobile. */
 .section--metrics > .container { width: min(calc(100% - 3rem), 105.75rem); }
 .metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+
+/* H5 — sección Skills: ancho del prototipo independiente del Hero ya aprobado. */
+.section--skills > .container {
+  width: min(calc(100% - 3rem), var(--skills-container-width));
+}

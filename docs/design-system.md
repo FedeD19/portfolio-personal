@@ -54,3 +54,12 @@ H3 ya implementó la navbar flotante horizontal en desktop, la cabecera redondea
 - Métricas sobre franja negra continua: distribución horizontal tanto desktop como mobile.
 - Se usan cifras académicas verificables, sin inventar experiencia profesional.
 - El contenido y posición fueron ajustados con referencias exportadas de Figma a 1920 y 390 px.
+
+## H5 — Skills / Especialidades
+
+- Figma desktop: contenedor propio de máximo **1360 px**, encabezado grande y tres filas con columnas para **número**, **especialidad** y **descripción + conocimientos**. Separadores horizontales entre filas.
+- Figma mobile: márgenes laterales de 24 px, encabezado en dos renglones, especialidades apiladas y separadores. Evita las tarjetas genéricas que se utilizaban en H4.
+- La estructura utiliza `ol > li`, con encabezados `h3` y una lista `ul` para las herramientas o conocimientos de cada especialidad. Se mantiene un único DOM para todos los tamaños.
+- La etiqueta y el título de sección tienen variantes visibles por breakpoint; no hay dos títulos `h2` distintos.
+- Se eligió la descripción de programación de la referencia desktop para ambas vistas por coherencia temática; la versión mobile mostraba una frase sobre «Experiencias mobile-first» bajo Lógica de programación. Se deja registrado como ajuste de contenido.
+- El máximo específico se controla con `--skills-container-width`, sin modificar el contenedor general de H4, cuya alineación fue revisada y aprobada.

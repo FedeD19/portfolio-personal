@@ -86,3 +86,41 @@
   .hero-title { font-size: clamp(2.1rem, 11.8vw, 2.6rem); }
   .metric span { font-size: 0.78rem; }
 }
+
+/* H5: el ancho y la estructura de Skills se adaptan de forma independiente.
+   El h2 cambia de frase visible según la referencia, manteniendo un único h2. */
+@media (min-width: 768px) {
+  .section--skills { padding-block: 6.75rem 8rem; }
+  .section--skills > .container {
+    width: min(calc(100% - 6rem), var(--skills-container-width));
+  }
+  .skills-mobile-only { display: none; }
+  .skills-desktop-only { display: inline; }
+  .skills-eyebrow { margin-bottom: 2.5rem; font-size: 1rem; }
+  .skills-title { max-width: none; font-size: clamp(2.6rem, 3.2vw, 3.65rem); line-height: 1.1; }
+  .section--skills .skills-grid { margin-top: 2.5rem; }
+  .skill-row,
+  .skill-row:first-child {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2.25rem;
+    align-items: start;
+    padding-block: 2.25rem 2.8rem;
+  }
+  .skill-row__number { display: block; font-size: 1rem; }
+  .skill-row__number::after { content: none; }
+  .skill-row h3 { display: block; font-size: clamp(1.35rem, 1.55vw, 1.75rem); line-height: 1.27; }
+  .skill-row__details { margin-top: 0; }
+  .skill-row__details p { font-size: 1.0625rem; line-height: 1.45; }
+  .skill-row__tools { margin-top: 1.5rem; }
+}
+@media (min-width: 1200px) {
+  .section.section--skills { padding-block: 8.75rem 9rem; }
+  .skill-row,
+  .skill-row:first-child {
+    grid-template-columns: 3rem minmax(0, 32rem) minmax(0, 1fr);
+    gap: 3rem;
+    padding-block: 2.25rem 2.75rem;
+  }
+  .skill-row__details p { font-size: 1.125rem; line-height: 1.42; }
+}

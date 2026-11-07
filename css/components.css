@@ -261,3 +261,73 @@ p { max-width: 75ch; }
 }
 .footer-inner strong { font-size: 1.5rem; }
 .footer-inner p, .footer-inner small { color: rgb(240 250 248 / 80%); }
+
+/* H5 — Skills: lista de especialidades con separadores (no tarjetas). */
+.section--skills {
+  padding-block: var(--space-12) 7rem;
+}
+.skills-desktop-only { display: none; }
+.skills-mobile-only { display: inline; }
+.skills-eyebrow {
+  margin-bottom: 1.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+}
+.skills-title {
+  max-width: 16ch;
+  margin: 0;
+  font-size: clamp(2rem, 8.4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.24;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+/* Es una lista en DOM: se apila en mobile sin perder el orden de lectura. */
+.section--skills .skills-grid {
+  display: block;
+  margin: 2.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.skill-row {
+  display: block;
+  padding: 1.625rem 0 1.8rem;
+  border-bottom: 1px solid var(--color-line);
+  min-width: 0;
+}
+.skill-row:first-child { padding-top: 0; }
+.skill-row__number,
+.skill-row h3 {
+  display: inline;
+  vertical-align: baseline;
+  font-size: clamp(1.125rem, 4.8vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+.skill-row__number::after { content: ' / '; white-space: pre; }
+.skill-row h3 { margin: 0; text-transform: uppercase; }
+.skill-row__details { min-width: 0; margin-top: 1rem; }
+.skill-row__details p {
+  max-width: 40rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.skill-row__tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.3rem;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  list-style: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.skill-row__tools li + li::before {
+  content: '·';
+  margin-right: 0.3rem;
+}

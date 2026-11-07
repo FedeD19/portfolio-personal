@@ -80,16 +80,48 @@
       </div>
     </section>
 
-    <!-- H5: desarrollar la sección Skills y los componentes definitivos. -->
-    <section class="section" id="skills" aria-labelledby="titulo-skills">
+    <!-- H5 — Skills: una sola lista semántica, dos composiciones responsive según Figma. -->
+    <section class="section section--skills" id="skills" aria-labelledby="titulo-skills">
       <div class="container">
-        <p class="eyebrow">Skills / Mis especialidades</p>
-        <h2 id="titulo-skills">Lo que puedo aportar.</h2>
-        <div class="skills-grid">
-          <article class="info-card"><h3>01 / Diseño web</h3><p>Sitios claros, accesibles y adaptables a cada pantalla.</p><p class="tags">HTML · CSS · Figma</p></article>
-          <article class="info-card"><h3>02 / UI / UX Design</h3><p>Interfaces consistentes y flujos centrados en las personas.</p><p class="tags">Figma · Design systems</p></article>
-          <article class="info-card"><h3>03 / Lógica de programación y algoritmos</h3><p>Organización, resolución de problemas y fundamentos de programación.</p><p class="tags">Algoritmos · Programación</p></article>
-        </div>
+        <p class="eyebrow skills-eyebrow">
+          <span class="skills-desktop-only">Skills / Lo que puedo aportar</span>
+          <span class="skills-mobile-only">Skills / Mis especialidades</span>
+        </p>
+        <h2 class="skills-title" id="titulo-skills">
+          Mis especialidades
+        </h2>
+        <ol class="skills-grid" aria-label="Especialidades y herramientas">
+          <li class="skill-row">
+            <span class="skill-row__number" aria-hidden="true">01</span>
+            <h3>Diseño web</h3>
+            <div class="skill-row__details">
+              <p>Sitios claros, accesibles y adaptables a cada pantalla. De la estructura inicial al detalle visual.</p>
+              <ul class="skill-row__tools" aria-label="Herramientas de diseño web">
+                <li>Figma</li><li>HTML</li><li>CSS</li>
+              </ul>
+            </div>
+          </li>
+          <li class="skill-row">
+            <span class="skill-row__number" aria-hidden="true">02</span>
+            <h3>UI / UX Design</h3>
+            <div class="skill-row__details">
+              <p>Interfaces consistentes y flujos centrados en las personas. Diseño de sistemas y prototipos visuales.</p>
+              <ul class="skill-row__tools" aria-label="Herramientas de UI y UX">
+                <li>Figma</li><li>Design systems</li>
+              </ul>
+            </div>
+          </li>
+          <li class="skill-row">
+            <span class="skill-row__number" aria-hidden="true">03</span>
+            <h3>Lógica de programación y algoritmos</h3>
+            <div class="skill-row__details">
+              <p>Capacidad de abstracción, resolución de problemas y optimización de código. Estructuración clara del flujo de datos y lógica de negocio.</p>
+              <ul class="skill-row__tools" aria-label="Conocimientos de programación">
+                <li>Algoritmos</li><li>Programación</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 

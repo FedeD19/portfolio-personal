@@ -59,6 +59,7 @@
   --radius-md: 0.75rem;
   --radius-pill: 999px;
   --container-width: 1120px;
+  --skills-container-width: 85rem; /* 1360px, sección Skills desktop de Figma */
   --header-height: 6rem; /* margen de seguridad para las anclas */
   --nav-max-width: 42rem;
   --nav-height-mobile: 4rem;

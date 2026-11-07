@@ -2,7 +2,7 @@
 
 Trabajo Final de Diseño UX/UI (2026) · Licenciatura en Sistemas de Información.
 
-> **Estado actual: H4/10 — Hero y métricas.** Navbar H3 intacta y primera pantalla adaptada a desktop y mobile según las exportaciones de Figma. Skills y las siguientes secciones permanecen provisionales hasta H5–H8.
+> **Estado actual: H5/10 — Skills.** Se completó la sección de especialidades en desktop y mobile. H3 (navegación) y H4 (Hero y métricas corregidos) se mantienen intactos. Proyectos y las secciones posteriores siguen planificados para H6–H8.
 
 ## Objetivo
 
@@ -65,6 +65,16 @@ docs/         documentación y capturas del proceso UX/UI
 - Fotografías de proyectos, perfil y enlaces a demos/repositorios: se agregarán en H6 y H8.
 - Datos de experiencia, métricas y presentación: revisar junto con los textos personales definitivos antes de publicar.
 
+## H5 — Skills
+
+- Referencias: `02 · Skills.png` (1920 × 1200) y `02 · Skills Mobile.png` (390 × 1026) del Figma actualizado.
+- `index.html`: la sección usa una lista ordenada semántica de tres especialidades; cada una incluye nombre, explicación y lista real de herramientas/conocimientos.
+- `css/layout.css`, `components.css`, `responsive.css` y `tokens.css`: ancho de referencia desktop 1360 px para esta sección, filas de tres columnas y separadores; en mobile se transforma en bloques verticales sin tablas ni duplicación de contenido.
+- El encabezado visual alterna entre **«MIS ESPECIALIDADES»** (desktop) y **«LO QUE PUEDO APORTAR.»** (mobile) con un solo `h2` y spans ocultos por CSS.
+- La descripción de lógica y programación es la de la captura desktop en todos los tamaños: la captura mobile tenía un texto distinto sobre diseño mobile-first, que no corresponde a la categoría. Se conservan las etiquetas académicas existentes **Algoritmos · Programación** para completar el contenido mínimo de herramientas o conocimientos.
+- No se alteraron los archivos JS ni el HTML/CSS del Hero, las métricas o la navbar (salvo añadir las reglas propias de Skills al final de los CSS existentes).
+- **Pruebas:** confirmar con Live Server los anchos 375, 390, 768, 1280 y 1920 px; líneas divisorias, ausencia de scroll horizontal, orden de lectura, ancla `#skills` y contraste legible sobre el fondo. No se afirma cumplimiento WCAG/Lighthouse hasta validación final.
+
 ## H4 — Hero y Métricas
 
 - `index.html`: el Hero ahora tiene tres líneas explícitas de título, agrupación de presentación y área de disponibilidad independiente. Ambos CTA son anclas nativas a `#proyectos` y `#contacto`.
@@ -89,7 +99,7 @@ docs/         documentación y capturas del proceso UX/UI
 - H2: design tokens, tipografía, fondo y estilos globales (completado).
 - H3: header/navegación final desktop y móvil; corrección del fondo (completado).
 - H4: Hero y métricas (completado).
-- H5: Skills.
+- H5: Skills (completado).
 - H6: tarjetas de los tres proyectos, capturas y enlaces.
 - H7: experiencia/formación.
 - H8: sobre mí, contacto, footer y redes.
@@ -106,4 +116,4 @@ docs/         documentación y capturas del proceso UX/UI
 
 ## Uso de IA
 
-La estructura H1, los estilos globales H2, la navegación H3 y la composición Hero/Métricas H4 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
+La estructura H1, los estilos globales H2, la navegación H3 y la composición Hero/Métricas H4 y Skills H5 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
