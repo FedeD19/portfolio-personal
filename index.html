@@ -125,41 +125,53 @@
       </div>
     </section>
 
-    <!-- H6: sustituir los espacios visuales por capturas auténticas de cada trabajo. -->
-    <section class="section" id="proyectos" aria-labelledby="titulo-proyectos">
+    <!-- H6 — capturas reales y enlaces externos a repositorios o demo; una sola grilla responsive. -->
+    <section class="section section--projects" id="proyectos" aria-labelledby="titulo-proyectos">
       <div class="container">
-        <p class="eyebrow">Trabajos académicos · 2026</p>
-        <h2 id="titulo-proyectos">Proyectos recientes</h2>
+        <header class="projects-intro">
+          <p class="eyebrow projects-eyebrow">Proyectos / Selección</p>
+          <h2 id="titulo-proyectos" class="projects-heading">
+            <span class="projects-heading--desktop">Proyectos recientes</span>
+            <span class="projects-heading--mobile">Ideas que toman forma.</span>
+          </h2>
+          <p class="projects-subtitle">Tres trabajos académicos que muestran mi aprendizaje en diseño y desarrollo web.</p>
+        </header>
+
         <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-card__media" role="img" aria-label="Imagen de Coffea pendiente de incorporar"></div>
-            <div class="project-card__body">
-              <p class="project-card__year">2026 · Sitio web responsive</p>
-              <h3>Coffea — Coffee Shop</h3>
-              <p>Maquetación de una landing page de cafetería a partir de un diseño de Figma.</p>
-              <p class="tags">HTML · CSS · Figma</p>
-              <p class="pending-note">Demo y repositorio: enlaces por incorporar.</p>
-            </div>
+          <article class="project-card" aria-labelledby="project-coffea-title">
+            <p class="project-card__year">2026 · Sitio web responsive</p>
+            <h3 id="project-coffea-title">Coffea — Coffee Shop</h3>
+            <a class="project-card__media" href="https://github.com/FedeD19/coffea-landing" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de Coffea en GitHub (abre una pestaña nueva)">
+              <img src="assets/projects/coffea-tarjeta.webp" width="1100" height="812" loading="lazy" decoding="async" alt="Portada de Coffea: fotografía de café, navegación superior y mensaje principal de la cafetería">
+            </a>
+            <p class="project-card__description">Landing page de cafetería maquetada a partir de un diseño de Figma, con componentes CSS y adaptación a distintas pantallas.</p>
+            <p class="project-card__tags">HTML · CSS · Figma</p>
+            <p class="project-card__learning"><strong>Aprendizaje:</strong> trasladar un diseño visual a una interfaz responsive y organizada.</p>
+            <a class="project-card__link" href="https://github.com/FedeD19/coffea-landing" target="_blank" rel="noopener noreferrer">Ver proyecto <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a>
           </article>
-          <article class="project-card">
-            <div class="project-card__media" role="img" aria-label="Imagen de Cubri Seguros pendiente de incorporar"></div>
-            <div class="project-card__body">
-              <p class="project-card__year">2026 · Checkout interactivo</p>
-              <h3>Cubri Seguros</h3>
-              <p>Flujo multipaso para contratar un seguro, con validaciones y pago simulado.</p>
-              <p class="tags">UX/UI · JavaScript · Basecoat UI</p>
-              <p class="pending-note">H9: caso de estudio; demo y repositorio por enlazar.</p>
-            </div>
+
+          <article class="project-card" aria-labelledby="project-cubri-title">
+            <p class="project-card__year">2026 · Checkout interactivo</p>
+            <h3 id="project-cubri-title">Cubri Seguros — Checkout</h3>
+            <a class="project-card__media" href="https://cubriseguros.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir demo de Cubri Seguros en una pestaña nueva">
+              <img src="assets/projects/cubri-tarjeta.webp" width="1100" height="776" loading="lazy" decoding="async" alt="Inicio de Cubri Seguros: propuesta de seguros, botón para cotizar y opciones de cobertura">
+            </a>
+            <p class="project-card__description">Contratación simulada de seguros: cotización, selección de planes, datos personales, validaciones y pago de prueba.</p>
+            <p class="project-card__tags">UX/UI · JavaScript · Basecoat UI</p>
+            <p class="project-card__learning"><strong>Aprendizaje:</strong> gestionar un flujo multipaso y mantener coherente el estado de los formularios.</p>
+            <a class="project-card__link" href="https://cubriseguros.netlify.app/" target="_blank" rel="noopener noreferrer">Ver proyecto <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a>
           </article>
-          <article class="project-card">
-            <div class="project-card__media" role="img" aria-label="Imagen del TP3 de HTML y CSS pendiente de incorporar"></div>
-            <div class="project-card__body">
-              <p class="project-card__year">2026 · Fundamentos web</p>
-              <h3>TP3 — Fundamentos de HTML y CSS</h3>
-              <p>Veinte ejercicios progresivos sobre HTML semántico, CSS, Flexbox, Grid, responsive y formularios.</p>
-              <p class="tags">HTML · CSS · Flexbox · Grid</p>
-              <p class="pending-note">Capturas y enlaces por incorporar.</p>
-            </div>
+
+          <article class="project-card" aria-labelledby="project-tp3-title">
+            <p class="project-card__year">2026 · Fundamentos web</p>
+            <h3 id="project-tp3-title">TP3 — Fundamentos HTML y CSS</h3>
+            <a class="project-card__media" href="https://github.com/FedeD19/TP3-Dise-o-UX-UI---HTML-CSS" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio del TP3 en GitHub (abre una pestaña nueva)">
+              <img src="assets/projects/tp3-tarjeta.webp" width="1100" height="595" loading="lazy" decoding="async" alt="Portada de DevFede: navegación superior y mensaje Aprendé a programar con una base sólida">
+            </a>
+            <p class="project-card__description">Veinte ejercicios progresivos sobre HTML semántico, Box Model, Flexbox, Grid, formularios y diseño responsive.</p>
+            <p class="project-card__tags">HTML · CSS · Flexbox · Grid</p>
+            <p class="project-card__learning"><strong>Aprendizaje:</strong> pasar de los fundamentos del marcado a layouts y componentes completos.</p>
+            <a class="project-card__link" href="https://github.com/FedeD19/TP3-Dise-o-UX-UI---HTML-CSS" target="_blank" rel="noopener noreferrer">Ver proyecto <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a>
           </article>
         </div>
       </div>

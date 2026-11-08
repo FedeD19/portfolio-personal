@@ -63,3 +63,14 @@ H3 ya implementó la navbar flotante horizontal en desktop, la cabecera redondea
 - La etiqueta y el título de sección tienen variantes visibles por breakpoint; no hay dos títulos `h2` distintos.
 - Se eligió la descripción de programación de la referencia desktop para ambas vistas por coherencia temática; la versión mobile mostraba una frase sobre «Experiencias mobile-first» bajo Lógica de programación. Se deja registrado como ajuste de contenido.
 - El máximo específico se controla con `--skills-container-width`, sin modificar el contenedor general de H4, cuya alineación fue revisada y aprobada.
+
+
+## H6 — Proyectos
+
+- La sección usa la misma imagen de fondo turquesa fija del portfolio; no se crea una capa independiente por tarjeta.
+- Desktop (a partir de 768 px): dos columnas editoriales; cada tarjeta distribuye el año y título a la izquierda, la captura a la derecha y luego resumen/herramientas/aprendizaje.
+- Mobile: una sola columna y orden natural de lectura (año, título, imagen, descripción, herramientas, aprendizaje y enlace).
+- El título del bloque cambia según la exportación de Figma: «Proyectos recientes» desktop y «Ideas que toman forma.» mobile. El encabezado sigue siendo un solo `h2`.
+- Imágenes optimizadas en WebP: capturas suministradas por el alumno, completas y sin recortar textos o logos gracias a `object-fit: contain`.
+- Enlaces: cada captura y su enlace «Ver proyecto» apuntan a un destino externo en nueva pestaña: Coffea y TP3 a sus repositorios GitHub, Cubri Seguros a Netlify. No hay fichas internas. El caso de estudio de H9 se resolverá como modal accesible sin alterar esos enlaces.
+- H6 preserva el título de Skills «Mis especialidades» en todos los anchos y no modifica la maquetación del Hero aprobado en H4.

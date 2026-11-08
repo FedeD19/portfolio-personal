@@ -124,3 +124,39 @@
   }
   .skill-row__details p { font-size: 1.125rem; line-height: 1.42; }
 }
+
+/* H6 — grilla de dos columnas; en mobile la imagen sigue al título. */
+@media (min-width: 768px) {
+  .section--projects > .container { width: min(calc(100% - 6rem), 85rem); }
+  .section--projects .projects-intro { margin-bottom: 2.75rem; }
+  .projects-eyebrow { display: none; }
+  .projects-heading--mobile { display: none; }
+  .projects-heading--desktop { display: inline; }
+  .projects-heading { max-width: none; font-size: clamp(2.7rem, 3.4vw, 3.6rem); }
+  .projects-subtitle { display: none; }
+  .section--projects .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.3rem 3rem; }
+  .section--projects .project-card {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(2rem,1fr) auto auto auto auto;
+    grid-template-areas: 'year media' 'title media' '. media' 'link media' 'desc desc' 'tags tags' 'learning learning';
+    column-gap: 1.5rem;
+    padding-block: 0 2.75rem;
+  }
+  .section--projects .project-card__year { margin-bottom: 0.75rem; }
+  .section--projects .project-card h3 { margin-bottom: 1rem; font-size: clamp(1.25rem, 1.5vw, 1.8rem); }
+  .section--projects .project-card__media { aspect-ratio: 5 / 4; }
+  .section--projects .project-card__link { align-self: end; margin: 0; }
+  .section--projects .project-card__description { margin-top: 1.4rem; }
+}
+@media (min-width: 1200px) {
+  .section.section--projects { padding-block: 8rem 8.5rem; }
+  .section--projects .projects-intro { margin-bottom: 4.5rem; }
+  .section--projects .projects-grid { column-gap: 4rem; row-gap: 3.5rem; }
+  .section--projects .project-card { column-gap: 1.75rem; padding-bottom: 3.1rem; }
+  .section--projects .project-card__description { font-size: 1.05rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section--projects .project-card__media img { transition: none; }
+  .section--projects .project-card__media:hover img,
+  .section--projects .project-card__media:active img { transform: none; }
+}

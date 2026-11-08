@@ -1,0 +1,21 @@
+/* H6 — fichas académicas vinculadas desde Proyectos. */
+.detail-wrap { width: min(calc(100% - 2.5rem), 68rem); margin-inline: auto; }
+.detail-header { padding-block: 1.3rem; background: #102322; color: #f0faf8; }
+.detail-header .detail-wrap { display: flex; justify-content: space-between; align-items: center; }
+.detail-back { display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 700; text-decoration: none; }
+.detail-back:hover { text-decoration: underline; }
+.detail-logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; }
+.detail-page main { padding-block: clamp(3rem, 7vw, 6.5rem); }
+.detail-eyebrow { text-transform: uppercase; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.05em; }
+.detail-page h1 { max-width: 18ch; font-size: clamp(2.5rem, 7vw, 5.25rem); line-height: 1.1; margin: 1.25rem 0; }
+.detail-summary { max-width: 50rem; font-size: clamp(1rem, 2vw, 1.3rem); }
+.detail-figure { margin: 2rem 0; }
+.detail-figure img { width: 100%; height: auto; border: 1px solid rgb(12 50 51 / 24%); box-shadow: 0 24px 80px rgb(0 30 30 / 15%); }
+.detail-figure figcaption { padding-top: 0.75rem; font-size: 0.875rem; }
+.detail-facts { display: grid; gap: 2rem; padding-top: 1rem; }
+.detail-facts h2 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.detail-facts p { font-size: 1rem; }
+.detail-note { margin: 2rem 0 0; max-width: 44rem; font-size: 0.9rem; }
+.detail-back--bottom { margin-top: 1.5rem; }
+.detail-footer { padding: 2rem 1.25rem; text-align: center; background: #102322; color: #f0faf8; font-size: 0.875rem; }
+@media (min-width: 768px) { .detail-facts { grid-template-columns: 1fr 1fr; gap: 4rem; } }

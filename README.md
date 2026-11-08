@@ -2,7 +2,7 @@
 
 Trabajo Final de Diseño UX/UI (2026) · Licenciatura en Sistemas de Información.
 
-> **Estado actual: H5/10 — Skills.** Se completó la sección de especialidades en desktop y mobile. H3 (navegación) y H4 (Hero y métricas corregidos) se mantienen intactos. Proyectos y las secciones posteriores siguen planificados para H6–H8.
+> **Estado actual: H6/10 — Proyectos.** Se incorporaron las tres tarjetas académicas con capturas reales, distribución responsive y enlaces. El título de Skills ahora dice «Mis especialidades» en todas las pantallas, como se solicitó. H7–H10 siguen pendientes.
 
 ## Objetivo
 
@@ -36,7 +36,6 @@ index.html
 css/          tokens.css, base.css, layout.css, components.css, responsive.css
 js/           main.js
 assets/       backgrounds/, projects/, profile/, icons/, og/
-proyectos/    página interna del caso de estudio (H9)
 docs/         documentación y capturas del proceso UX/UI
 ```
 
@@ -62,15 +61,31 @@ docs/         documentación y capturas del proceso UX/UI
 - Fuente principal: Inter mediante Google Fonts (`display=swap`), con alternativas locales de sistema.
 - Fondo: imagen aportada junto con el prototipo; confirmar crédito/licencia en la entrega final.
 - Imagen de Open Graph: captura del prototipo **provisional**; sustituirla por la captura del sitio final y cambiar `og:image` a una URL HTTPS absoluta en H10.
-- Fotografías de proyectos, perfil y enlaces a demos/repositorios: se agregarán en H6 y H8.
+- Capturas de los tres proyectos proporcionadas por el alumno e incorporadas en H6; fotografía de perfil por completar en H8.
 - Datos de experiencia, métricas y presentación: revisar junto con los textos personales definitivos antes de publicar.
+
+
+## H6 — Proyectos
+
+- Proyectos definitivos: **Coffea**, **Cubri Seguros** y **TP3 — Fundamentos HTML y CSS**. Se reemplazaron los placeholders de H5 por imágenes tomadas de los archivos originales compartidos por el alumno.
+- Las tarjetas usan las **tres capturas WebP originales enviadas por el alumno** (Coffea, Cubri Seguros y DevFede/TP3). Se optimizaron al ancho máximo de 1100 px sin cambiar su contenido. No se incorporaron imágenes genéricas ni fichas internas.
+- Desktop: dos columnas con año, título, captura completa, descripción, herramientas, aprendizaje y enlace. Mobile: tarjetas apiladas manteniendo el orden de lectura semántico y el encabezado del Figma mobile.
+- Tanto la captura como **«Ver proyecto»** abren el destino externo en nueva pestaña (`target="_blank"` + `rel="noopener noreferrer"`):
+  - **Coffea (GitHub):** https://github.com/FedeD19/coffea-landing
+  - **Cubri Seguros (Netlify):** https://cubriseguros.netlify.app/
+  - **TP3 — Fundamentos HTML/CSS (GitHub):** https://github.com/FedeD19/TP3-Dise-o-UX-UI---HTML-CSS
+- Las fichas `proyectos/coffea.html` y `proyectos/tp3.html` y el CSS destinado exclusivamente a ellas se eliminaron. En **H9** se preparará el **caso de estudio UX exigido por la consigna como un modal accesible** dentro de la página, manteniendo los enlaces «Ver proyecto» externos. Las URLs deberán comprobarse antes de entregar.
+- El TP3 contiene ejercicios y textos ficticios de práctica, no representa servicios profesionales reales.
+- Para el caso de Coffea se reconoce que el diseño de partida fue una plantilla de Figma; se destaca el trabajo de implementación.
+- El cambio del `h2` de Skills a **Mis especialidades** en ambas versiones está integrado; H3 y H4 no se modificaron.
+- Pruebas recomendadas: Live Server en 375, 390, 768, 1280 y 1920 px; comprobar que `#proyectos` sea navegable, que las seis áreas clicables de proyectos abran sus destinos externos, que no haya scroll horizontal y que el orden de foco sea coherente.
 
 ## H5 — Skills
 
 - Referencias: `02 · Skills.png` (1920 × 1200) y `02 · Skills Mobile.png` (390 × 1026) del Figma actualizado.
 - `index.html`: la sección usa una lista ordenada semántica de tres especialidades; cada una incluye nombre, explicación y lista real de herramientas/conocimientos.
 - `css/layout.css`, `components.css`, `responsive.css` y `tokens.css`: ancho de referencia desktop 1360 px para esta sección, filas de tres columnas y separadores; en mobile se transforma en bloques verticales sin tablas ni duplicación de contenido.
-- El encabezado visual alterna entre **«MIS ESPECIALIDADES»** (desktop) y **«LO QUE PUEDO APORTAR.»** (mobile) con un solo `h2` y spans ocultos por CSS.
+- El título del `h2` es **«MIS ESPECIALIDADES»** en desktop y mobile (ajuste solicitado después de H5); los spans de alternancia se retiraron únicamente del `h2`.
 - La descripción de lógica y programación es la de la captura desktop en todos los tamaños: la captura mobile tenía un texto distinto sobre diseño mobile-first, que no corresponde a la categoría. Se conservan las etiquetas académicas existentes **Algoritmos · Programación** para completar el contenido mínimo de herramientas o conocimientos.
 - No se alteraron los archivos JS ni el HTML/CSS del Hero, las métricas o la navbar (salvo añadir las reglas propias de Skills al final de los CSS existentes).
 - **Pruebas:** confirmar con Live Server los anchos 375, 390, 768, 1280 y 1920 px; líneas divisorias, ausencia de scroll horizontal, orden de lectura, ancla `#skills` y contraste legible sobre el fondo. No se afirma cumplimiento WCAG/Lighthouse hasta validación final.
@@ -100,10 +115,10 @@ docs/         documentación y capturas del proceso UX/UI
 - H3: header/navegación final desktop y móvil; corrección del fondo (completado).
 - H4: Hero y métricas (completado).
 - H5: Skills (completado).
-- H6: tarjetas de los tres proyectos, capturas y enlaces.
+- H6: tarjetas de los tres proyectos, capturas y enlaces (completado).
 - H7: experiencia/formación.
 - H8: sobre mí, contacto, footer y redes.
-- H9: caso de estudio de Cubri Seguros.
+- H9: caso de estudio de Cubri Seguros en modal accesible (sin fichas internas; los enlaces de proyecto seguirán siendo externos).
 - H10: accesibilidad, performance, SEO, comparación Figma/sitio y despliegue automático.
 
 ## Entrega final (pendiente)
@@ -116,4 +131,4 @@ docs/         documentación y capturas del proceso UX/UI
 
 ## Uso de IA
 
-La estructura H1, los estilos globales H2, la navegación H3 y la composición Hero/Métricas H4 y Skills H5 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
+La estructura H1, los estilos globales H2, la navegación H3 y la composición Hero/Métricas H4 Skills H5 y proyectos H6 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
