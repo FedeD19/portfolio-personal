@@ -227,36 +227,67 @@
       </div>
     </section>
 
-    <!-- H8: incorporar retrato y revisar el texto definitivo. -->
-    <section class="section" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
-      <div class="container">
-        <p class="eyebrow">Sobre mí</p>
-        <h2 id="titulo-sobre-mi">Un poco sobre mí.</h2>
-        <p class="section-intro">Soy estudiante de Licenciatura en Sistemas de Información. Me interesa aprender y aplicar nuevos conocimientos mediante proyectos reales y académicos.</p>
-        <h3>Tres principios que me guían</h3>
-        <div class="principles-grid">
-          <article class="info-card"><h4>01 / Claridad</h4><p>Cada decisión debe ayudar a entender y avanzar.</p></article>
-          <article class="info-card"><h4>02 / Curiosidad</h4><p>Escuchar y preguntar antes de dar una solución.</p></article>
-          <article class="info-card"><h4>03 / Colaboración</h4><p>Compartir el proceso hace que el resultado sea mejor.</p></article>
+    <!-- H8 — Sobre mí: retrato aportado por el alumno, texto y tres principios de Figma. -->
+    <section class="section section--about" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+      <div class="container about-content">
+        <div class="about-profile">
+          <h2 class="about-title" id="titulo-sobre-mi">Sobre mí.</h2>
+          <figure class="about-portrait">
+            <img
+              src="assets/profile/federico-dri.webp"
+              width="960" height="1024"
+              loading="lazy" decoding="async"
+              alt="Retrato de Federico Dri frente a un espejo, tomando una fotografía con su teléfono">
+            <figcaption>
+              <strong>Federico Dri</strong>
+              <span>Estudiante · Entre Ríos</span>
+            </figcaption>
+          </figure>
         </div>
-        <!-- TODO H8: imagen personal con texto alternativo significativo. -->
+        <div class="about-details">
+          <p class="about-description">Soy un estudiante de Licenciatura en Sistemas de Información. Desde 2023 estoy aprendiendo e implementando nuevos conocimientos para formarme como profesional.</p>
+          <div class="about-principles" aria-labelledby="principios-titulo">
+            <h3 id="principios-titulo">Tres principios que me guían</h3>
+            <ol class="principles-list">
+              <li><h4>01 / Claridad</h4><p>Cada decisión debe ayudar a entender y a avanzar.</p></li>
+              <li><h4>02 / Curiosidad</h4><p>Escuchar y preguntar antes de dar una solución.</p></li>
+              <li><h4>03 / Colaboración</h4><p>Compartir el proceso hace que el resultado sea mejor.</p></li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- H8 — Contacto: email y GitHub reales. No se inventan perfiles sociales. -->
     <section class="section section--contact" id="contacto" aria-labelledby="titulo-contacto">
-      <div class="container">
-        <p class="eyebrow">Contacto / Construyamos juntos</p>
-        <h2 id="titulo-contacto">Hagamos algo que importe.</h2>
-        <p class="section-intro">¿Tenés un proyecto en mente? Contame qué querés construir y encontremos la mejor forma de hacerlo.</p>
-        <a class="contact-email" href="mailto:federicopauldri@gmail.com">federicopauldri@gmail.com</a>
-        <p class="pending-note">TODO H8: agregar URLs reales de LinkedIn y otra red social.</p>
+      <div class="container contact-content">
+        <div class="contact-primary">
+          <p class="eyebrow contact-eyebrow">Contacto / Construyamos juntos</p>
+          <h2 id="titulo-contacto" class="contact-heading">Hagamos algo<br>que importe.</h2>
+          <p class="contact-description">¿Tenés un proyecto en mente? Contame qué querés construir y encontremos la mejor forma de hacerlo.</p>
+          <a class="contact-email" href="mailto:federicopauldri@gmail.com">federicopauldri@gmail.com</a>
+          <ul class="contact-socials" aria-label="Redes de contacto">
+            <!-- TODO: reemplazar el texto por un enlace al recibir la URL real de LinkedIn. -->
+            <li><span class="social-pending" title="Falta confirmar el enlace a LinkedIn">LinkedIn (enlace pendiente)</span></li>
+            <li><a href="https://github.com/FedeD19" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a></li>
+          </ul>
+        </div>
+        <div class="contact-secondary">
+          <div class="contact-services">
+            <h3>¿Un nuevo<br>proyecto?</h3>
+            <p>Diseño web · Producto digital<br>Investigación · Identidad visual</p>
+          </div>
+          <a class="button contact-cta" href="mailto:federicopauldri@gmail.com?subject=Consulta%20desde%20tu%20portfolio">Escribime por email <span class="button__arrow" aria-hidden="true">↗</span></a>
+          <p class="contact-location">Entre Ríos, Argentina · GMT-3</p>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- H8 — Pie de página con navegación interna, redes y créditos de tecnología. -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div><strong>Federico Dri</strong><p>Portfolio personal · HTML, CSS y JavaScript vanilla.</p></div>
+      <p class="footer-name">Federico Dri</p>
       <nav aria-label="Navegación de pie de página">
         <ul class="footer-links">
           <li><a href="#inicio">Inicio</a></li>
@@ -267,7 +298,15 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <small>© 2026 Federico Dri. Todos los derechos reservados.</small>
+      <ul class="footer-socials" aria-label="Redes sociales">
+        <!-- TODO: incorporar URL personal de LinkedIn; no se usa un enlace ficticio. -->
+        <li><span class="social-pending" title="Falta confirmar el enlace a LinkedIn">LinkedIn (enlace pendiente)</span></li>
+        <li><a href="https://github.com/FedeD19" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a></li>
+      </ul>
+      <div class="footer-bottom">
+        <small>© 2026 Federico Dri. Todos los derechos reservados.</small>
+        <small>Hecho con HTML5, CSS3 y JavaScript vanilla.</small>
+      </div>
     </div>
   </footer>
 </body>

@@ -71,3 +71,17 @@
 .section--experience > .container {
   width: min(calc(100% - 3rem), 85rem);
 }
+
+
+/* H8 — contenedores independientes: Sobre mí, Contacto y Footer. */
+.section--about > .container,
+.section--contact > .container,
+.site-footer > .container {
+  width: min(calc(100% - 3rem), 85rem);
+}
+/* Sobre mí: primero retrato y luego texto en mobile; columnas desde tablet. */
+.about-content { display: grid; grid-template-columns: minmax(0, 1fr); gap: 3.5rem; }
+.about-profile, .about-details { min-width: 0; }
+.contact-content { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
+/* Pie de página: una sola columna a todas las anchuras. */
+.site-footer .footer-inner { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }

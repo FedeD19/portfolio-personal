@@ -2,7 +2,7 @@
 
 Trabajo Final de Diseño UX/UI (2026) · Licenciatura en Sistemas de Información.
 
-> **Estado actual: H6/10 — Proyectos.** Se incorporaron las tres tarjetas académicas con capturas reales, distribución responsive y enlaces. El título de Skills ahora dice «Mis especialidades» en todas las pantallas, como se solicitó. H7–H10 siguen pendientes.
+> **Estado actual: H8/10 — Sobre mí, Contacto y Footer.** Las nueve secciones de la página principal están maquetadas. El enlace personal de LinkedIn todavía requiere confirmación; H9–H10 quedan pendientes.
 
 ## Objetivo
 
@@ -61,7 +61,7 @@ docs/         documentación y capturas del proceso UX/UI
 - Fuente principal: Inter mediante Google Fonts (`display=swap`), con alternativas locales de sistema.
 - Fondo: imagen aportada junto con el prototipo; confirmar crédito/licencia en la entrega final.
 - Imagen de Open Graph: captura del prototipo **provisional**; sustituirla por la captura del sitio final y cambiar `og:image` a una URL HTTPS absoluta en H10.
-- Capturas de los tres proyectos proporcionadas por el alumno e incorporadas en H6; fotografía de perfil por completar en H8.
+- Capturas de los tres proyectos proporcionadas por el alumno e incorporadas en H6; retrato personal aportado por el alumno, optimizado a `assets/profile/federico-dri.webp` en H8.
 - Datos de experiencia, métricas y presentación: revisar junto con los textos personales definitivos antes de publicar.
 
 
@@ -117,7 +117,7 @@ docs/         documentación y capturas del proceso UX/UI
 - H5: Skills (completado).
 - H6: tarjetas de los tres proyectos, capturas y enlaces (completado).
 - H7: experiencia/formación (completado).
-- H8: sobre mí, contacto, footer y redes.
+- H8: sobre mí, contacto, footer y redes (completado salvo URL personal de LinkedIn).
 - H9: caso de estudio de Cubri Seguros en modal accesible (sin fichas internas; los enlaces de proyecto seguirán siendo externos).
 - H10: accesibilidad, performance, SEO, comparación Figma/sitio y despliegue automático.
 
@@ -131,7 +131,7 @@ docs/         documentación y capturas del proceso UX/UI
 
 ## Uso de IA
 
-La estructura H1, los estilos globales H2, la navegación H3 y la composición Hero/Métricas H4, Skills H5, proyectos H6 y trayectoria H7 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
+La estructura H1, los estilos globales H2, la navegación H3 y la composición Hero/Métricas H4, Skills H5, proyectos H6 trayectoria H7 y secciones personales H8 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
 
 ## H7 — Experiencia y formación
 
@@ -142,3 +142,15 @@ La estructura H1, los estilos globales H2, la navegación H3 y la composición H
 - La sección tiene su propio contenedor ancho (máx. 1360 px) y estilos **encapsulados**, sin alterar Hero, Skills o Proyectos.
 - **Verificación:** 375, 390, 768, 1280 y 1920 px, navegación con `#experiencia`, ausencia de scroll horizontal y orden correcto con lector de pantalla; contraste y Lighthouse se revisan en H10.
 - Cuando se publique el portfolio, actualizar el primer hito para indicar que la publicación ya se concretó.
+
+
+## H8 — Sobre mí, Contacto y Footer
+
+- Referencias: pantallas Figma `05 · Sobre mí` y `06/07 · Contacto + Footer`, en desktop 1920px y mobile 390px.
+- La fotografía personal proporcionada se redujo a 960px de ancho, convertida a WebP optimizado sin recortar ni retocar y se incluye con `alt` significativo, dimensiones y `loading="lazy"`.
+- Desktop: **Sobre mí** en dos columnas (retrato/identidad + presentación/tres principios). Mobile: foto centrada seguida de nombre, descripción y los principios en vertical.
+- Contacto: mantiene email real `federicopauldri@gmail.com` y CTA `mailto:`; incorpora enlace a GitHub `https://github.com/FedeD19` y deja LinkedIn **sin URL** hasta que se facilite el enlace personal. No se inventan perfiles ni se enlaza a páginas genéricas de LinkedIn. El Figma dibuja Instagram, pero GitHub es la red adicional confirmada en la implementación.
+- Footer: navegación por anclas, redes, © 2026 y créditos `HTML5, CSS3, JavaScript vanilla`.
+- Ningún archivo JS fue modificado; se mantienen intactos Hero, Skills, Proyectos y Experiencia de los hitos aprobados.
+- Para completar la consigna antes de H10: **sustituir los dos `span.social-pending` por enlaces reales al perfil personal de LinkedIn**, uno en Contacto y otro en Footer.
+- Verificar en Live Server los tamaños 375, 390, 768, 1280 y 1920 px; comprobar que la imagen se vea completa, el email abra el cliente de correo, GitHub abra en nueva pestaña y no haya scroll horizontal.

@@ -82,3 +82,14 @@ H3 ya implementó la navbar flotante horizontal en desktop, la cabecera redondea
 - Contenido académico realista: trabajos de UX/UI realizados en 2026 y Licenciatura iniciada en 2023. El portfolio sigue etiquetado *en desarrollo* hasta confirmar su publicación.
 - Se utiliza `ol` para los hitos, `<time datetime="...">` para las fechas y `ul` para los dos aprendizajes de cada entrada; los puntos del eje son decorativos y se dibujan exclusivamente con CSS.
 - Breakpoints reutilizados de H1–H6, con estilos encapsulados en `.section--experience`; no se introducen animaciones ni dependencias adicionales.
+
+
+## H8 — Sobre mí, Contacto y Footer
+
+- Misma textura turquesa que las secciones anteriores, sin nuevos fondos repetidos.
+- Foto de perfil: WebP original suministrado por el alumno, redimensionado sin modificaciones de estilo. `object-fit: cover` en contenedor que respeta su relación de aspecto; `alt` descriptivo.
+- Sobre mí desktop: grilla de dos columnas, foto al lado izquierdo, presentación y tres principios a la derecha; mobile: una columna y retrato centrado.
+- Los principios se presentan como lista `ol` sin tarjetas para coincidir con el diseño visual.
+- Contacto desktop: título y email a la izquierda, propuesta de colaboración, CTA y zona horaria a la derecha. Mobile: una columna, CTA negro por debajo de los enlaces, margen vertical amplio según Figma.
+- Footer negro con enlaces de anclas, GitHub y pendiente de LinkedIn, copyright y crédito tecnológico. El Figma mostraba Instagram como segundo vínculo, pero se usa GitHub porque su URL sí fue confirmada.
+- **Pendiente**: obtener y enlazar URL exacta de LinkedIn antes de la entrega final. Los rótulos de LinkedIn son informativos, NO enlaces falsos. Revisar contrastes WCAG AA y Lighthouse en H10.

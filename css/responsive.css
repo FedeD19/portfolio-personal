@@ -195,3 +195,62 @@
 @media (max-width: 359px) {
   .experience-heading { font-size: 1.58rem; }
 }
+
+
+/* H8 — About/Contacto/Footer. No cambia estilos de Hero, Skills ni Proyectos. */
+@media (min-width: 768px) {
+  .section--about > .container,
+  .section--contact > .container,
+  .site-footer > .container { width: min(calc(100% - 6rem), 85rem); }
+  .section.section--about { min-height: 52rem; padding-block: 5.5rem 8rem; }
+  .about-content { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); column-gap: clamp(3rem, 5vw, 7rem); }
+  .about-title { margin: 0 0 2.5rem; font-size: clamp(2.6rem, 3.2vw, 3.2rem); }
+  .about-portrait img { width: min(100%, 21.75rem); }
+  .about-portrait figcaption { align-items: center; text-align: center; margin-top: 2.25rem; }
+  .about-description { font-size: clamp(1.125rem, 1.5vw, 1.5rem); }
+  .about-principles { margin-top: 5rem; }
+  .principles-list { gap: 2.75rem; }
+  .principles-list h4 { font-size: clamp(1.25rem, 1.5vw, 1.5rem); }
+  .principles-list p { font-size: 1.0625rem; }
+
+  .section.section--contact { min-height: 46rem; padding-block: 6rem 7rem; }
+  .contact-content { grid-template-columns: minmax(0, 1.07fr) minmax(0, 0.93fr); column-gap: clamp(2rem, 5vw, 6rem); }
+  .contact-eyebrow { display: none; }
+  .contact-heading { font-size: clamp(2.75rem, 3.7vw, 3.75rem); line-height: 1.22; }
+  .contact-description { margin-top: 2.75rem; font-size: clamp(1.05rem, 1.35vw, 1.25rem); }
+  .section--contact .contact-email { margin-top: 4rem; font-size: clamp(1.35rem, 2.05vw, 2rem); }
+  .contact-socials { margin-top: 2.75rem; }
+  .contact-secondary { margin-top: 1.75rem; }
+  .contact-services { display: block; }
+  .contact-services h3 { margin: 0 0 2rem; font-size: clamp(2.25rem, 3vw, 3.25rem); line-height: 1.24; text-transform: uppercase; }
+  .contact-services p { margin: 0; font-size: 1.125rem; line-height: 1.55; }
+  .contact-cta { width: min(100%, 22.5rem); margin-top: 4.5rem; }
+  .contact-location { margin-top: 3.25rem; }
+
+  .site-footer { min-height: 17.5rem; padding: 2.25rem 0; }
+  .footer-name { display: none; }
+  .site-footer .footer-links { max-width: none; }
+  .site-footer .footer-socials { margin-top: 0.65rem; }
+  .footer-bottom { margin-top: 3.5rem; }
+}
+@media (min-width: 1200px) {
+  .section.section--about { min-height: 65rem; padding-block: 6.25rem 10rem; }
+  .about-content { grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); column-gap: 5rem; }
+  .about-title { margin-bottom: 2.75rem; font-size: 3.35rem; }
+  .about-portrait img { width: min(100%, 25.8rem); }
+  .about-description { font-size: 1.55rem; line-height: 1.45; }
+  .about-principles { margin-top: 7rem; }
+  .about-principles > h3 { font-size: 1rem; margin-bottom: 2.8rem; }
+  .principles-list { gap: 3rem; }
+  .principles-list h4 { font-size: 1.6rem; }
+  .principles-list p { font-size: 1.125rem; }
+
+  .section.section--contact { min-height: 51rem; padding-block: 7.5rem 8rem; }
+  .contact-heading { font-size: clamp(3.1rem, 3.4vw, 3.75rem); }
+  .contact-services h3 { font-size: clamp(2.6rem, 3vw, 3.3rem); }
+  .section--contact .contact-email { font-size: clamp(1.5rem, 2.05vw, 2rem); }
+  .site-footer { min-height: 16rem; }
+}
+@media (max-width: 359px) {
+  .section--contact .contact-email { font-size: 1.05rem; }
+}
