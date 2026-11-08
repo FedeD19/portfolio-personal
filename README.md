@@ -116,7 +116,7 @@ docs/         documentación y capturas del proceso UX/UI
 - H4: Hero y métricas (completado).
 - H5: Skills (completado).
 - H6: tarjetas de los tres proyectos, capturas y enlaces (completado).
-- H7: experiencia/formación.
+- H7: experiencia/formación (completado).
 - H8: sobre mí, contacto, footer y redes.
 - H9: caso de estudio de Cubri Seguros en modal accesible (sin fichas internas; los enlaces de proyecto seguirán siendo externos).
 - H10: accesibilidad, performance, SEO, comparación Figma/sitio y despliegue automático.
@@ -131,4 +131,14 @@ docs/         documentación y capturas del proceso UX/UI
 
 ## Uso de IA
 
-La estructura H1, los estilos globales H2, la navegación H3 y la composición Hero/Métricas H4 Skills H5 y proyectos H6 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
+La estructura H1, los estilos globales H2, la navegación H3 y la composición Hero/Métricas H4, Skills H5, proyectos H6 y trayectoria H7 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
+
+## H7 — Experiencia y formación
+
+- Referencias: `04 · Experiencia.png` (desktop 1920 px) y `04 · Experiencia Mobile.png` (390 px) del Figma actualizado.
+- Se muestran tres hitos de la trayectoria **académica**, no experiencia laboral inventada: portfolio personal (2026, aún en desarrollo), cursada de Diseño UX/UI (2026) e ingreso a la Licenciatura en Sistemas de Información en UADER FCyT (2023, carrera en curso).
+- Dos acciones o aprendizajes por hito, en una lista ordenada semántica de eventos y listas de viñetas. Para el portfolio se habla de preparación de la publicación, sin afirmar que ya está online.
+- La línea de tiempo usa un único eje vertical continuo y tres marcadores decorativos CSS (`aria-hidden` no es necesario en los pseudo-elementos). Mobile: fecha y contenido apilados a la derecha de la línea. Desde 768px: fecha a la izquierda y contenido a la derecha.
+- La sección tiene su propio contenedor ancho (máx. 1360 px) y estilos **encapsulados**, sin alterar Hero, Skills o Proyectos.
+- **Verificación:** 375, 390, 768, 1280 y 1920 px, navegación con `#experiencia`, ausencia de scroll horizontal y orden correcto con lector de pantalla; contraste y Lighthouse se revisan en H10.
+- Cuando se publique el portfolio, actualizar el primer hito para indicar que la publicación ya se concretó.

@@ -66,3 +66,8 @@
 .section--projects > .container {
   width: min(calc(100% - 2.75rem), 85rem);
 }
+
+/* H7 — el ancho de Experiencia replica el de Figma sin alterar el Hero. */
+.section--experience > .container {
+  width: min(calc(100% - 3rem), 85rem);
+}

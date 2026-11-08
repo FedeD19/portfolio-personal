@@ -385,3 +385,103 @@ p { max-width: 75ch; }
 }
 .section--projects .project-card__link:hover { border-color: currentColor; }
 .section--projects .project-card__link:active { color: #064d4b; }
+
+/* H7 — Experiencia / Formación. Línea de tiempo semántica, mobile-first. */
+.section.section--experience {
+  padding-block: 4.75rem 7.25rem;
+}
+.experience-eyebrow {
+  margin: 0 0 1.35rem;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-transform: none;
+}
+.experience-eyebrow__desktop { display: none; }
+.experience-eyebrow__mobile { display: inline; }
+.experience-heading {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(1.6rem, 7.45vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.36;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+.experience-heading__line { display: block; }
+.section--experience .timeline {
+  --timeline-axis: 0.3125rem;
+  position: relative;
+  display: grid;
+  gap: 0;
+  margin: 7.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+/* Una sola línea continua, sin tres segmentos que puedan desalinearse. */
+.section--experience .timeline::before {
+  content: '';
+  position: absolute;
+  top: 0.55rem;
+  bottom: 0.65rem;
+  left: var(--timeline-axis);
+  width: 1px;
+  background: var(--color-ink);
+}
+.section--experience .timeline > .timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.75rem;
+  min-width: 0;
+  padding: 0 0 4.35rem 1.5rem;
+}
+.section--experience .timeline > .timeline__item:last-child { padding-bottom: 0; }
+.section--experience .timeline > .timeline__item::before {
+  content: '';
+  position: absolute;
+  top: 0.46rem;
+  left: var(--timeline-axis);
+  z-index: 1;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--color-ink);
+  transform: translateX(-50%);
+}
+.section--experience .timeline__date {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+.section--experience .timeline__entry { min-width: 0; }
+.section--experience .timeline__entry h3 {
+  max-width: 34ch;
+  margin: 0 0 1.45rem;
+  font-size: clamp(1.3rem, 5.55vw, 1.625rem);
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: -0.035em;
+}
+.section--experience .timeline__institution {
+  margin: 0 0 0.6rem;
+  font-size: 0.875rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+.section--experience .timeline__highlights {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: clamp(0.965rem, 4vw, 1.125rem);
+  line-height: 1.48;
+  list-style: disc;
+}
+/* Evita heredar el antiguo grid genérico de .timeline li sobre las viñetas. */
+.section--experience .timeline__highlights > li {
+  display: list-item;
+  margin: 0;
+  padding: 0;
+  list-style: disc;
+}

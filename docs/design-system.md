@@ -74,3 +74,11 @@ H3 ya implementó la navbar flotante horizontal en desktop, la cabecera redondea
 - Imágenes optimizadas en WebP: capturas suministradas por el alumno, completas y sin recortar textos o logos gracias a `object-fit: contain`.
 - Enlaces: cada captura y su enlace «Ver proyecto» apuntan a un destino externo en nueva pestaña: Coffea y TP3 a sus repositorios GitHub, Cubri Seguros a Netlify. No hay fichas internas. El caso de estudio de H9 se resolverá como modal accesible sin alterar esos enlaces.
 - H6 preserva el título de Skills «Mis especialidades» en todos los anchos y no modifica la maquetación del Hero aprobado en H4.
+
+## H7 — Trayectoria / Experiencia
+
+- Composición desktop (1920 × 1202): contenedor de hasta 1360 px, título uppercase de dos líneas y línea de tiempo de tres columnas visuales: **fecha / eje con punto / hito y aprendizajes**.
+- Composición mobile (390 × 1178): el año se coloca encima de cada hito y a la derecha de un eje vertical continuo con tres marcadores oscuros.
+- Contenido académico realista: trabajos de UX/UI realizados en 2026 y Licenciatura iniciada en 2023. El portfolio sigue etiquetado *en desarrollo* hasta confirmar su publicación.
+- Se utiliza `ol` para los hitos, `<time datetime="...">` para las fechas y `ul` para los dos aprendizajes de cada entrada; los puntos del eje son decorativos y se dibujan exclusivamente con CSS.
+- Breakpoints reutilizados de H1–H6, con estilos encapsulados en `.section--experience`; no se introducen animaciones ni dependencias adicionales.
