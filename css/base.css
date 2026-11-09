@@ -65,6 +65,25 @@ button { cursor: pointer; }
 }
 .skip-link:focus { transform: translateY(0); }
 .section { scroll-margin-top: calc(var(--header-height) + var(--space-4)); }
+/* Ajuste de la navegación por anclas: evitar el desplazamiento doble
+   de scroll-padding-top (html) y scroll-margin-top (.section).
+   No cambiar Inicio ni Contacto, que ya estaban correctos. */
+.section--skills,
+.section--projects,
+.section--experience,
+.section--about {
+  scroll-margin-top: 0;
+}
+/* Ajuste específico de las anclas en desktop según las capturas de Figma.
+   Cada sección tiene un padding-top distinto: una única corrección de
+   scroll-margin-top no posiciona sus encabezados en el mismo lugar.
+   El valor negativo compensa ese padding; la posición final del contenido
+   permanece debajo de la barra de navegación. En mobile no se altera nada. */
+@media (min-width: 1200px) {
+  .section--skills { scroll-margin-top: -8rem; }
+  .section--experience { scroll-margin-top: -9.875rem; }
+  .section--about { scroll-margin-top: -1.5rem; }
+}
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
