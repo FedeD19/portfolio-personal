@@ -75,3 +75,21 @@ Referencia: https://developer.chrome.com/docs/devtools/lighthouse/
 - [ ] Captura Lighthouse **mobile** (cuatro categorías).
 
 **Condiciones de evaluación:** sin sitio desplegado o sin 9 secciones, la consigna no se califica. Aprobación mínima de 60/100 y 50% de cada criterio.
+
+## Formulario de contacto (cambio posterior a H10)
+
+- Habilitar **Forms → Enable form detection** en Netlify y desplegar los archivos nuevos.
+- Verificar `portfolio-contacto` en el panel de Forms.
+- Enviar una prueba desde la URL pública, comprobando nombre, email y mensaje.
+- Confirmar que no se publica el correo personal en la sección Contacto.
+- Si se necesitan avisos, configurar una notificación privada en el panel de Netlify.
+- La recepción en producción y los límites de Netlify Forms dependen del servicio: verificarlos en el panel.
+
+### Confirmación del formulario de contacto sin cambiar de página
+
+El formulario se envía con `fetch()` a Netlify Forms desde la misma sección de Contacto.
+Si Netlify acepta la solicitud HTTP, la tarjeta muestra «¡Mensaje enviado!» y permite
+volver a escribir otro mensaje; el navegador no abandona `index.html`. No se utiliza
+`gracias.html`. Para verificar la recepción, revisar **Netlify → Forms → portfolio-contacto**.
+La prueba de Live Server no envía mensajes. Sin JavaScript, la confirmación del
+envío HTML nativo queda a cargo de Netlify y podría abrir su página predeterminada.

@@ -28,8 +28,10 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/case-study.css">
+  <link rel="stylesheet" href="css/contact-form.css">
   <script src="js/main.js" defer></script>
   <script src="js/case-study.js" defer></script>
+  <script src="js/contact-form.js" defer></script>
   <title>Federico Dri | Portfolio personal</title>
 </head>
 <body>
@@ -358,25 +360,65 @@
       </div>
     </section>
 
-    <!-- H8 — Contacto: email y GitHub reales. No se inventan perfiles sociales. -->
+    <!-- Contacto: formulario de Netlify Forms, sin mostrar una dirección de email en el HTML. -->
     <section class="section section--contact" id="contacto" aria-labelledby="titulo-contacto">
       <div class="container contact-content">
         <div class="contact-primary">
           <p class="eyebrow contact-eyebrow">Contacto / Construyamos juntos</p>
           <h2 id="titulo-contacto" class="contact-heading">Hagamos algo<br>que importe.</h2>
           <p class="contact-description">¿Tenés un proyecto en mente? Contame qué querés construir y encontremos la mejor forma de hacerlo.</p>
-          <a class="contact-email" href="mailto:federicopauldri@gmail.com">federicopauldri@gmail.com</a>
+          <p class="contact-invitation">Escribime desde el formulario. Voy a responderte cuando pueda.</p>
           <ul class="contact-socials" aria-label="Redes de contacto">
             <li><a href="https://github.com/FedeD19" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a></li>
           </ul>
+          <p class="contact-location">Entre Ríos, Argentina · GMT-3</p>
         </div>
         <div class="contact-secondary">
-          <div class="contact-services">
-            <h3>¿Un nuevo<br>proyecto?</h3>
-            <p>Diseño web · Producto digital<br>Investigación · Identidad visual</p>
-          </div>
-          <a class="button contact-cta" href="mailto:federicopauldri@gmail.com?subject=Consulta%20desde%20tu%20portfolio">Escribime por email <span class="button__arrow" aria-hidden="true">↗</span></a>
-          <p class="contact-location">Entre Ríos, Argentina · GMT-3</p>
+          <form
+            id="formulario-contacto"
+            class="contact-form"
+            name="portfolio-contacto"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            aria-labelledby="formulario-contacto-titulo"
+          >
+            <div class="contact-form__intro">
+              <p class="contact-form__eyebrow">¿Hablamos?</p>
+              <h3 id="formulario-contacto-titulo">Contame tu idea.</h3>
+              <p>Completá estos datos y me pondré en contacto con vos.</p>
+            </div>
+
+            <!-- Netlify Forms identifica el nombre del formulario en cada envío. -->
+            <input type="hidden" name="form-name" value="portfolio-contacto">
+            <p class="contact-form__trap" aria-hidden="true">
+              <label>Dejá este campo vacío: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+            </p>
+
+            <div class="contact-form__field">
+              <label for="contacto-nombre">Nombre <span aria-hidden="true">*</span></label>
+              <input id="contacto-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" minlength="2" maxlength="90" required>
+            </div>
+            <div class="contact-form__field">
+              <label for="contacto-email">Email <span aria-hidden="true">*</span></label>
+              <input id="contacto-email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" maxlength="254" required>
+            </div>
+            <div class="contact-form__field">
+              <label for="contacto-mensaje">Mensaje <span aria-hidden="true">*</span></label>
+              <textarea id="contacto-mensaje" name="mensaje" rows="5" placeholder="Contame sobre tu proyecto..." minlength="10" maxlength="2500" required></textarea>
+            </div>
+            <button class="contact-form__submit" type="submit">
+              <span>Enviar mensaje</span> <span aria-hidden="true">↗</span>
+            </button>
+            <p id="contacto-estado" class="contact-form__status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
+            <div class="contact-form__success" id="contacto-confirmacion" hidden role="status" aria-live="polite">
+              <span class="contact-form__success-icon" aria-hidden="true">✓</span>
+              <h3 id="contacto-confirmacion-titulo" tabindex="-1">¡Mensaje enviado!</h3>
+              <p>Gracias por escribirme. Recibí tu mensaje y voy a responderte cuando pueda.</p>
+              <button class="contact-form__again" type="button" id="contacto-otro-mensaje">Escribir otro mensaje <span aria-hidden="true">↗</span></button>
+            </div>
+            <p class="contact-form__privacy">Los datos que envíes se utilizarán para poder responder tu consulta. El formulario se procesa mediante Netlify.</p>
+          </form>
         </div>
       </div>
     </section>

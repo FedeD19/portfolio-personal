@@ -28,8 +28,8 @@ index.html                     Página one-page
 404.html                       Página de error personalizada (Netlify)
 netlify.toml                   Despliegue estático y encabezados
 robots.txt                     Archivo de indexación
-css/                           Design tokens, base, layout, componentes, responsive, case-study
-js/                            Navegación y panel de caso de estudio
+css/                           Design tokens, base, layout, componentes, responsive, case-study, contact-form
+js/                            Navegación, panel de caso de estudio y formulario
 assets/                        Fondo, imágenes de proyectos, retrato, favicon y Open Graph
 docs/                          Proceso, guía de entrega y validaciones
 scripts/configurar-url.ps1     Completar SEO al conocer la URL definitiva
@@ -72,6 +72,25 @@ El menú responsive utiliza `aria-expanded`, `aria-controls` y Escape. Se incluy
 
 Guía detallada: [`docs/guia-entrega.md`](docs/guia-entrega.md).
 
+## Formulario de contacto (Netlify Forms)
+
+Contacto utiliza un formulario nativo de **nombre, email y mensaje**, con campos obligatorios,
+validación HTML5 y un campo antispam *honeypot*. No se publica el email del destinatario en el HTML.
+No requiere backend propio, ni API keys ni dependencias. `js/contact-form.js` mejora la experiencia
+mostrando un panel de confirmación dentro de la misma tarjeta, sin redirecciones, y permite escribir otro mensaje. Sin JavaScript, el envío HTML nativo puede mostrar la página de confirmación predeterminada de Netlify.
+
+**Activación en Netlify (imprescindible):**
+
+1. Abrí el sitio en Netlify → **Forms** → **Enable form detection**, si aún está desactivado.
+2. Hacé `git push origin main` para que Netlify vuelva a procesar el HTML estático y detecte `portfolio-contacto`.
+3. Probá el formulario en la **URL pública** con un mensaje realista; no funciona desde Live Server.
+4. Consultá Netlify → **Forms → portfolio-contacto** para comprobar la recepción.
+5. Opcionalmente, configurá una **notificación por email** desde el panel de Netlify, sin exponer la dirección en el repositorio.
+
+> Importante: quitar el correo del HTML actual no borra sus apariciones en commits históricos
+> de GitHub ni posibles versiones ya publicadas. Para reducir exposición futura no se repite
+> en la página, pero los datos históricos podrían seguir accesibles.
+
 ## Diseño y proceso UX/UI
 
 El proceso se realiza en Figma: definición de usuario objetivo, escenario de uso, benchmark de tres portfolios, moodboard, arquitectura/card sorting, wireframes desktop y mobile, design system, prototipos, y test con al menos tres participantes. Se recomienda registrar tareas, observaciones y cambios aplicados. No se incluyen hallazgos inventados.
@@ -95,7 +114,7 @@ El proceso se realiza en Figma: definición de usuario objetivo, escenario de us
 
 Objetivo: **WCAG 2.2 AA** y **Lighthouse mobile ≥ 90** en Performance, Accessibility, Best Practices y SEO. El cumplimiento completo **no queda certificado por el código**: se debe evaluar en el sitio público y validar manualmente navegación por teclado, contraste en fondos fotográficos y tareas de usabilidad. La captura de Lighthouse y los hallazgos reales deben incorporarse a la entrega.
 
-**Nota sobre redes:** por decisión del autor, Contacto/Footer enlazan GitHub y correo electrónico, sin LinkedIn. La consigna académica pide LinkedIn más otra red; confirmar la excepción con el docente.
+**Nota sobre redes:** por decisión del autor, Contacto/Footer enlazan GitHub y el formulario de contacto (sin publicar la dirección personal), sin LinkedIn. La consigna académica pide LinkedIn más otra red; confirmar la excepción con el docente.
 
 ## Uso de IA
 
