@@ -1,115 +1,164 @@
-# Design System — H2
+# Design System — Portfolio personal (versión post-H10)
 
-## Referencia visual
+**Proyecto:** Federico Dri · Portfolio personal · Diseño UX/UI 2026  
+**Implementación:** HTML5 + CSS3 + JavaScript vanilla  
+**Base visual:** prototipo en Figma con exportaciones desktop (1920 px) y mobile (390 px).  
+**Estado:** sistema implementado y extendido después de H10 con el formulario de contacto Netlify Forms, la confirmación integrada y ajustes de navegación.
 
-Basado en `Prototipo de Portfolio Personal.fig` y las exportaciones desktop (1920 px) y mobile (390 px) entregadas. Los tokens son una **aproximación visual a partir de las exportaciones**, no una exportación automática de los valores exactos de Figma. Cuando se disponga de los códigos y estilos del panel Design pueden afinarse los valores en `css/tokens.css`.
+> Los valores iniciales se ajustaron visualmente desde las exportaciones. Este documento describe **los valores del CSS incluido en el proyecto**, no afirma que todos coincidan numéricamente con los tokens originales de Figma.
 
-## Color
+## 1. Principios de diseño
 
-| Token | Valor | Uso |
+1. **Claridad:** jerarquías fuertes, titulares legibles, botones reconocibles y navegación breve.
+2. **Consistencia:** colores, tipografía, espaciados, radios, estados y componentes compartidos en todas las secciones.
+3. **Adaptabilidad:** una estructura semántica que cambia mediante CSS entre mobile, tablet y desktop, sin duplicar la página.
+4. **Accesibilidad:** navegación por teclado, foco visible y reducción del movimiento para quien lo solicite.
+
+## 2. Color y superficies
+
+Los tokens globales están definidos en `css/tokens.css`:
+
+| Token | Valor actual | Uso |
 | --- | --- | --- |
-| `--color-ink` | `#101414` | Titulares, texto principal, bordes fuertes |
+| `--color-ink` | `#101414` | Titulares, texto principal, contraste sobre turquesa |
 | `--color-muted` | `#173b3a` | Texto secundario sobre fondos claros |
-| `--color-on-dark` | `#f0faf8` | Texto sobre negro |
-| `--color-surface` | `#111313` | Franja de métricas y footer |
-| `--color-accent` | `#8cece7` | Accentos y botones secundarios |
-| `--color-bg-fallback` | `#079c9b` | Color de respaldo del fondo |
-| `--color-line` | `rgb(16 20 20 / 35%)` | Separadores |
-| `--color-focus` | `#fff8b8` | Foco del teclado sobre oscuro |
+| `--color-on-dark` | `#f0faf8` | Texto claro sobre superficies negras |
+| `--color-surface` | `#111313` | Métricas, Footer y tarjeta del formulario |
+| `--color-surface-soft` | `#163b3a` | Superficie oscura alternativa |
+| `--color-accent` | `#8cece7` | Botones y acentos en superficie negra |
+| `--color-accent-deep` | `#007f80` | Tonalidad turquesa intensa |
+| `--color-bg-fallback` | `#079c9b` | Fondo de reserva |
+| `--color-focus` | `#fff8b8` | Foco de teclado sobre superficies oscuras |
+| `--color-line` | `rgb(16 20 20 / 35%)` | Separadores sobre fondo turquesa |
+| `--color-header-glass` | `rgb(17 39 43 / 42%)` | Navbar flotante translúcida |
 
-El fondo con textura original del H1 se conserva en `assets/backgrounds/fondo-portfolio.webp`.
+**Fondo:** `assets/backgrounds/fondo-portfolio.webp`, aplicado como imagen fija detrás del contenido mediante CSS para evitar repeticiones verticales. Los titulares usan tinta oscura sobre la textura; la tarjeta del formulario crea un plano negro sólido para asegurar una presentación legible y coherente.
 
-## Tipografía
+**Colores locales del formulario** (`css/contact-form.css`):
 
-Una sola familia sans serif: **Inter**, con alternativas `Segoe UI`, Arial, sans-serif. Es una elección visual provisional; confirmar la tipografía exacta en Figma. Se carga por Google Fonts usando `display=swap`; si no hay conexión, se usa el fallback.
+| Elemento | Valor | Función |
+| --- | --- | --- |
+| Fondo de inputs y textarea | `#071d1d` | Diferenciarlos de la tarjeta `#111313` |
+| Texto de campos | `#f0faf8` | Lectura sobre fondo oscuro |
+| Borde de campo | `#6d8785` | Delimitación normal |
+| Borde al pasar el mouse | `#a7c7c3` | Estado `:hover` |
+| Placeholder | `#bdd2cf` | Instrucción de ejemplo |
+| Texto secundario y privacidad | `#c5d7d5` | Notas y descripción |
+| Botón de envío | `#8cece7` | Acción primaria de formulario |
+| Fondo de aviso de error | `#193c3b` | Retroalimentación sin abandonar la página |
+| Barra de error | `#ffb6aa` | Estado de fallo de envío |
 
-- Título principal: `--type-h1: clamp(2.75rem, 5.2vw, 6rem)`, peso 800.
-- Títulos de sección: `--type-h2: clamp(2rem, 3.6vw, 4.1rem)`, peso 800.
-- Títulos de tarjeta: `--type-h3: clamp(1.125rem, 1.6vw, 1.5rem)`.
-- Texto base: 16 px / 1.55; etiquetas: 12 px; texto secundario: 14 px.
-- Tracking en títulos: `-0.055em`.
+Los colores anteriores deben comprobarse con herramientas de contraste sobre sus fondos reales. El fondo texturizado tiene variaciones locales de luminosidad.
 
-## Espaciado y responsive
+## 3. Tipografía
 
-Escala basada en múltiplos de 4 y 8 píxeles (`--space-1` a `--space-24`). Contenedor central máximo: 1120 px. Breakpoints del CSS: 768 px (tablet) y 1200 px (desktop); realizar las pruebas que exige la consigna a **375 px, 768 px y 1280 px**.
+- Familia principal: **Inter**, cargada desde Google Fonts con `display=swap`; fallback `Segoe UI`, Arial, sans-serif.
+- Texto base: `1rem` (16 px) con `--line-body: 1.55`.
+- `--type-h1: clamp(2.75rem, 5.2vw, 6rem)`; `--type-h2: clamp(2rem, 3.6vw, 4.1rem)`; `--type-h3: clamp(1.125rem, 1.6vw, 1.5rem)`.
+- Etiquetas: `--type-xs: .75rem` (12 px); texto secundario: `--type-sm: .875rem` (14 px).
+- Titulares: `--tracking-heading: -.055em`, peso fuerte, transformaciones a mayúsculas según sección.
+- Los encabezados cumplen una jerarquía `h1` → `h2` → `h3` (con `h4` en subsecciones internas).
 
-## Interacción y accesibilidad
+El contenido de **Skills** utiliza «MIS ESPECIALIDADES» en **desktop y mobile** mediante un solo `h2` en el DOM.
 
-- `:focus-visible` visible y «Saltar al contenido» en HTML.
-- `:hover` y `:active` definidos para enlaces y botones; las interacciones específicas se completan en H3–H8.
-- `prefers-reduced-motion: reduce` reduce animaciones y desactiva scroll suave.
-- Contraste WCAG AA y puntuaciones Lighthouse se **verificarán** en H10. El fondo es fotográfico y su contraste cambia por región, así que no basta validar colores de token aislados.
-- Navegación accesible sin JavaScript y menú toggle con `aria-expanded` cuando JS está activo.
+## 4. Espaciados, contenedores y breakpoints
 
-## Próximos pasos
+Escala basada en múltiplos de 4/8 px: `--space-1` a `--space-24`; valores de referencia 4, 8, 12, 16, 24, 32, 48, 64, 80 y 96 px. Radios: `--radius-sm: .375rem`, `--radius-md: .75rem`, `--radius-pill: 999px`.
 
-H3 ya implementó la navbar flotante horizontal en desktop, la cabecera redondeada mobile y un fondo fijo sin repetición vertical. H4 afinará alturas y posiciones del Hero y la franja de métricas. H5–H8 cerrarán el diseño por sección; H9 el caso de estudio; H10 validación y despliegue.
+- Contenedor general: `--container-width: 1120px`.
+- Skills y otras áreas editoriales: ancho ampliado a **1360 px** según su composición en Figma.
+- Navegación: `--nav-max-width: 42rem`; altura mobile `4rem`, desktop `3.5rem`.
+- **Mobile-first** con cambios estructurales a `min-width: 768px` y `min-width: 1200px`.
+- Tamaños recomendados de prueba: **320, 375, 390, 768, 1280 y 1920 px**, más zoom del navegador y navegación por teclado.
 
+Patrones responsive: navbar hamburguesa en mobile y horizontal flotante en desktop; Skills y timeline con filas editoriales en desktop y bloques apilados en mobile; Proyectos en dos columnas desktop y una mobile; Sobre mí y Contacto en dos columnas desktop y una mobile. Las métricas permanecen en una fila compacta de tres cifras.
 
-## H4 — Hero y métricas
+## 5. Componentes y estados
 
-- Título del Hero en tres renglones, con escala fluida y alineación izquierda.
-- CTA negros en dos columnas en desktop y apilados a ancho completo en mobile, manteniendo su forma rectangular.
-- La ubicación y disponibilidad se separaron semánticamente del bloque de presentación para que puedan ocupar el pie del Hero en mobile.
-- Métricas sobre franja negra continua: distribución horizontal tanto desktop como mobile.
-- Se usan cifras académicas verificables, sin inventar experiencia profesional.
-- El contenido y posición fueron ajustados con referencias exportadas de Figma a 1920 y 390 px.
+| Componente | Desktop | Mobile | Estados/interacción |
+| --- | --- | --- | --- |
+| **Navbar** | Cápsula centrada, fondo semitransparente | Marca `FD`, botón hamburguesa | `:hover`, `:active`, `:focus-visible`, enlace activo con `aria-current`, `aria-expanded` y Escape |
+| **CTA del Hero** | Dos botones oscuros horizontales | Dos botones a ancho disponible | Desplazamiento por anclas a Proyectos y Contacto |
+| **Métricas** | Franja negra, tres cifras | Tres cifras compactas | Contenido informativo, sin controles falsos |
+| **Skills** | Número, especialidad, descripción y herramientas en columnas | Bloques verticales y separadores | Listas semánticas `ol`/`ul` |
+| **Tarjeta de proyecto** | Grilla editorial: título + captura y descripción | Contenido en una columna | Imagen y «Ver proyecto» abren destino real; foco visible |
+| **Caso de estudio Cubri** | Panel desplegable bajo las tarjetas | Mismo panel con imágenes apiladas | `<details>/<summary>`, teclado y foco; no altera «Ver proyecto» |
+| **Timeline** | Fecha, eje vertical y texto | Fecha y detalle apilados junto al eje | `ol`, `time` y elementos decorativos CSS |
+| **Sobre mí** | Foto y principios en dos columnas | Retrato y texto verticales | Retrato con `alt` descriptivo |
+| **Contacto** | Texto a la izquierda y tarjeta oscura a la derecha | Texto seguido de formulario | Campos requeridos, foco amarillo, envío, error y confirmación integrada |
+| **Footer** | Navegación, GitHub y créditos | Enlaces reordenados verticalmente | Enlaces por anclas y GitHub en nueva pestaña |
 
-## H5 — Skills / Especialidades
+## 6. Formulario de contacto (implementación post-H10)
 
-- Figma desktop: contenedor propio de máximo **1360 px**, encabezado grande y tres filas con columnas para **número**, **especialidad** y **descripción + conocimientos**. Separadores horizontales entre filas.
-- Figma mobile: márgenes laterales de 24 px, encabezado en dos renglones, especialidades apiladas y separadores. Evita las tarjetas genéricas que se utilizaban en H4.
-- La estructura utiliza `ol > li`, con encabezados `h3` y una lista `ul` para las herramientas o conocimientos de cada especialidad. Se mantiene un único DOM para todos los tamaños.
-- La etiqueta y el título de sección tienen variantes visibles por breakpoint; no hay dos títulos `h2` distintos.
-- Se eligió la descripción de programación de la referencia desktop para ambas vistas por coherencia temática; la versión mobile mostraba una frase sobre «Experiencias mobile-first» bajo Lógica de programación. Se deja registrado como ajuste de contenido.
-- El máximo específico se controla con `--skills-container-width`, sin modificar el contenedor general de H4, cuya alineación fue revisada y aprobada.
+### Composición
 
+La sección mantiene el título **«HAGAMOS ALGO QUE IMPORTE.»**, propuesta de colaboración, ubicación y enlace a GitHub. En desktop, el formulario se encuentra **a la derecha** dentro de una tarjeta negra con borde sutil y sombra; en mobile, se **apila debajo** del texto. Se reemplazó el email expuesto por una interacción directa, conservando la estética de títulos oscuros sobre turquesa y controles claros sobre negro.
 
-## H6 — Proyectos
+### Contenido y validación
 
-- La sección usa la misma imagen de fondo turquesa fija del portfolio; no se crea una capa independiente por tarjeta.
-- Desktop (a partir de 768 px): dos columnas editoriales; cada tarjeta distribuye el año y título a la izquierda, la captura a la derecha y luego resumen/herramientas/aprendizaje.
-- Mobile: una sola columna y orden natural de lectura (año, título, imagen, descripción, herramientas, aprendizaje y enlace).
-- El título del bloque cambia según la exportación de Figma: «Proyectos recientes» desktop y «Ideas que toman forma.» mobile. El encabezado sigue siendo un solo `h2`.
-- Imágenes optimizadas en WebP: capturas suministradas por el alumno, completas y sin recortar textos o logos gracias a `object-fit: contain`.
-- Enlaces: cada captura y su enlace «Ver proyecto» apuntan a un destino externo en nueva pestaña: Coffea y TP3 a sus repositorios GitHub, Cubri Seguros a Netlify. No hay fichas internas. El caso de estudio de H9 se incorporó como panel desplegable dentro de Proyectos, sin alterar esos enlaces.
-- H6 preserva el título de Skills «Mis especialidades» en todos los anchos y no modifica la maquetación del Hero aprobado en H4.
+- Encabezado de tarjeta: eyebrow **«¿HABLAMOS?»**, título **«Contame tu idea.»** y una frase introductoria.
+- Campos: **Nombre**, **Email** y **Mensaje**, todos obligatorios. Nombre `minlength=2`, mensaje `minlength=10`, email `type=email`; límites máximos declarados en HTML.
+- Cada campo tiene un `<label>` asociado, placeholder auxiliar y estados `:hover` / `:focus-visible`.
+- Botón **«Enviar mensaje»**: acento `#8cece7`, texto oscuro y ancho completo.
+- Aviso de privacidad breve debajo del botón; no se muestra la dirección personal del destinatario.
 
-## H7 — Trayectoria / Experiencia
+### Comportamiento real en Netlify
 
-- Composición desktop (1920 × 1202): contenedor de hasta 1360 px, título uppercase de dos líneas y línea de tiempo de tres columnas visuales: **fecha / eje con punto / hito y aprendizajes**.
-- Composición mobile (390 × 1178): el año se coloca encima de cada hito y a la derecha de un eje vertical continuo con tres marcadores oscuros.
-- Contenido académico realista: trabajos de UX/UI realizados en 2026 y Licenciatura iniciada en 2023. El portfolio sigue etiquetado *en desarrollo* hasta confirmar su publicación.
-- Se utiliza `ol` para los hitos, `<time datetime="...">` para las fechas y `ul` para los dos aprendizajes de cada entrada; los puntos del eje son decorativos y se dibujan exclusivamente con CSS.
-- Breakpoints reutilizados de H1–H6, con estilos encapsulados en `.section--experience`; no se introducen animaciones ni dependencias adicionales.
+1. `<form name="portfolio-contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">` permite a Netlify reconocer el formulario durante el despliegue.
+2. El JavaScript `js/contact-form.js` utiliza `fetch('/')`, `URLSearchParams` y el campo oculto `form-name=portfolio-contacto` para enviar sin recargar la página.
+3. Mientras se envía, el botón queda deshabilitado y su texto cambia temporalmente a **«Enviando...»**.
+4. **Éxito:** el formulario reemplaza sus campos por una confirmación dentro de la misma tarjeta: icono de check, título **«¡Mensaje enviado!»**, mensaje de agradecimiento y botón **«Escribir otro mensaje»**. Este botón vuelve a mostrar el formulario y enfoca el primer campo.
+5. **Error:** permanece el formulario y aparece un mensaje de estado para permitir el reintento. En Live Server se informa que el envío debe hacerse desde la URL pública.
+6. **Sin JavaScript:** el envío HTML nativo queda a cargo de Netlify, cuya confirmación puede cambiar de página.
 
+### Evidencia de producción
 
-## H8 — Sobre mí, Contacto y Footer
+La detección del formulario está habilitada; `portfolio-contacto` aparece en Netlify Forms y se registró al menos un envío de prueba en **Verified submissions**. El autor confirmó el mensaje de éxito dentro de la página y el botón para escribir otro mensaje. Se configuró una **notificación por email** ante nuevas respuestas; su entrega efectiva requiere una prueba de correo separada.
 
-- Misma textura turquesa que las secciones anteriores, sin nuevos fondos repetidos.
-- Foto de perfil: WebP original suministrado por el alumno, redimensionado sin modificaciones de estilo. `object-fit: cover` en contenedor que respeta su relación de aspecto; `alt` descriptivo.
-- Sobre mí desktop: grilla de dos columnas, foto al lado izquierdo, presentación y tres principios a la derecha; mobile: una columna y retrato centrado.
-- Los principios se presentan como lista `ol` sin tarjetas para coincidir con el diseño visual.
-- Contacto desktop: título y email a la izquierda, propuesta de colaboración, CTA y zona horaria a la derecha. Mobile: una columna, CTA negro por debajo de los enlaces, margen vertical amplio según Figma.
-- Footer negro con enlaces de anclas, GitHub, copyright y crédito tecnológico. El Figma mostraba Instagram como segundo vínculo, pero se usa GitHub porque su URL sí fue confirmada.
-- **Para H10**: revisar contrastes WCAG AA y Lighthouse. El alumno decidió usar únicamente GitHub como red social; consultar la excepción con el docente, porque la consigna pide LinkedIn y al menos otra red.
+La dirección destinataria **no se muestra en el HTML público actual**, aunque no puede garantizarse su eliminación de versiones antiguas del repositorio o de cachés históricas.
 
+## 7. Navegación por anclas y ajustes post-H10
 
-## H9 — Caso de estudio integrado
+La navbar usa anclas hacia `#inicio`, `#skills`, `#proyectos`, `#experiencia`, `#sobre-mi` y `#contacto`. `js/main.js` mantiene visible el enlace activo mediante `aria-current="location"`, permite cerrar el menú mobile con Escape y cerrar al seleccionar una sección.
 
-- Patrón: `<details>`/`<summary>` nativos para expandir un caso de estudio dentro de Proyectos sin navegación a una nueva página.
-- El acceso se encuentra en la tarjeta Cubri Seguros, separado de «Ver proyecto» (demo externa).
-- Estilo: superficie clara semitransparente sobre el fondo turquesa; tipografía y bordes negros; grilla de capturas responsive 1/2 columnas y par de capturas mobile.
-- Accesibilidad: foco visible, control por teclado, estado `aria-expanded` sincronizado, contenido oculto cuando está cerrado, respeto de movimiento reducido.
-- Los enlaces LinkedIn pendientes se eliminan de Contacto y Footer en favor de un único enlace GitHub en cada área.
+Durante las pruebas posteriores a H10 se corrigió el posicionamiento de **Skills, Experiencia y Sobre mí**: las secciones no tienen el mismo `padding-top`, por lo que `css/base.css` suma compensaciones específicas en desktop a partir de **1200 px**:
 
-## H10 — Accesibilidad, publicación y SEO
+```css
+@media (min-width: 1200px) {
+  .section--skills { scroll-margin-top: -8rem; }
+  .section--experience { scroll-margin-top: -9.875rem; }
+  .section--about { scroll-margin-top: -1.5rem; }
+}
+```
 
-- Se conserva la paleta y las composiciones de H1–H9, sin introducir frameworks ni un sistema visual distinto del prototipo.
-- `main#contenido` puede recibir foco programático al activar «Saltar al contenido»; las reglas de foco proporcionan desplazamiento seguro frente al header sticky.
-- Se permite el reflow del título del Hero por debajo de 360 px, evitando desbordamiento horizontal en 320 px sin cambiar las tres líneas del Figma en 390 px.
-- `prefers-reduced-motion` sigue desactivando el scroll suave y las transiciones para quienes solicitan menos movimiento; el script del caso de estudio utiliza `auto` como valor estándar.
-- Las imágenes de proyectos, el retrato, el fondo y la portada social permanecen en WebP. Los `img` declaran `width`, `height`, `alt` y carga diferida cuando aparecen debajo de la primera pantalla.
-- `netlify.toml` declara la raíz como directorio de publicación y suma encabezados básicos de seguridad. `404.html` conserva la identidad visual del portfolio.
-- Open Graph contiene imagen y descripción; la URL absoluta y canonical **se incorporan después de conocer la URL HTTPS real** mediante `scripts/configurar-url.ps1`.
-- El fondo fotográfico tiene zonas claras y oscuras; no asumir que toda superposición de texto satisface WCAG AA sin medir el contraste de las regiones concretas del diseño publicado.
+**Inicio, Proyectos y Contacto** conservaron las posiciones de desplazamiento que ya habían sido aprobadas. El fondo común no se reinicia entre secciones.
+
+## 8. Accesibilidad y movimiento
+
+- Enlace «Saltar al contenido», `<main id="contenido" tabindex="-1">` y foco visible `:focus-visible`.
+- Menú mobile con `aria-expanded`/`aria-controls`, control de Escape y foco devuelto al botón cuando se cierra por teclado.
+- El caso de estudio usa `<details>`/`<summary>` y puede operarse sin depender de JavaScript para expandirse.
+- Campos y botón del formulario accesibles con teclado; estado de envío comunicado mediante región `aria-live`.
+- `prefers-reduced-motion: reduce` elimina las transiciones relevantes y evita scroll suave.
+- Imágenes en WebP, `alt` contextual y dimensiones explícitas; `loading="lazy"` fuera de la vista inicial.
+- La conformidad completa con **WCAG 2.2 AA** necesita validación manual además de auditorías automáticas.
+
+## 9. Evidencia Lighthouse y pendientes
+
+El repositorio incluye capturas en `docs/capturas/` de la URL pública con estas puntuaciones: **Rendimiento 97, Accesibilidad 100, Prácticas recomendadas 100 y SEO 100**. Son resultados registrados, no estimaciones. **En la captura de SEO figura «Escritorio emulado»**; antes de afirmar que se alcanzó la meta de **Lighthouse Mobile ≥90**, debe realizarse y documentarse una prueba específica en modo Mobile.
+
+La configuración de SEO en el código actual aún requiere ejecutar `scripts/configurar-url.ps1` con la URL HTTPS publicada para insertar `canonical`, `og:url`, la URL absoluta de `og:image` y generar `sitemap.xml`. Este paso no modifica el sistema visual.
+
+## 10. Relación Figma → implementación
+
+| Hito | Decisión conservada o adaptada |
+| --- | --- |
+| **H2–H3** | Paleta turquesa/negra, tokens, fondo continuo y navbar adaptable. |
+| **H4–H5** | Hero en tres líneas, métricas y Skills; título «MIS ESPECIALIDADES» en ambos anchos. |
+| **H6–H7** | Tarjetas reales de tres trabajos y timeline académico, sin experiencias laborales inventadas. |
+| **H8** | Retrato real, principios personales, Contacto y Footer. |
+| **H9** | Caso de estudio dentro de Proyectos, sin navegación interna adicional. |
+| **H10** | Reflow, accesibilidad base, SEO, deploy y página 404. |
+| **Post-H10** | Ajustes finos de anclas, formulario Netlify Forms con confirmación in situ, botón para repetir envío, notificaciones y pruebas reales. |
+
+**Archivo fuente de referencia:** `Prototipo de Portfolio Personal.fig`; la definición exacta de colores/tipografía debe contrastarse con el archivo de Figma si se necesita documentar diferencias de tokens. Las decisiones y hallazgos de investigación UX y los test con usuarios deben documentarse por separado, sin inventar evidencias.

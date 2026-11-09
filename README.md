@@ -1,121 +1,144 @@
 # Federico Dri — Portfolio personal
 
-Sitio personal desarrollado como **Trabajo Final de Diseño UX/UI (2026)**, Licenciatura en Sistemas de Información, UADER–FCyT.
+Portfolio personal desarrollado como **Trabajo Final de Diseño UX/UI (2026)** de la Licenciatura en Sistemas de Información, UADER–FCyT. El proyecto presenta mi formación, especialidades y tres trabajos académicos, siguiendo un prototipo propio realizado en Figma.
 
-- **Sitio publicado:** pendiente de despliegue en Netlify.
-- **Figma (prototipo y proceso):** agregar URL pública con permiso de visualización.
-- **Repositorio:** GitHub (este repositorio).
-- **Estado:** H10/10, código listo para comprobación final y publicación desde GitHub.
+- **Sitio publicado:** https://federicodriportfolio.netlify.app/
+- **Repositorio de GitHub:** https://github.com/FedeD19/portfolio-personal
+- **Figma (diseño y proceso UX):** **pendiente de agregar** el enlace compartido con permiso de visualización.
+- **Estado:** H1–H10 desarrollados; sitio desplegado desde GitHub en Netlify, con mejoras posteriores a H10 (navegación, formulario de contacto y documentación).
 
-## Qué incluye
+## Contenido del sitio
 
-Portfolio **one-page** con navegación mediante anclas, responsive y diseñado a partir de un prototipo propio de Figma. Contiene **Header, Hero, Métricas, Skills, Proyectos, Experiencia/Formación, Sobre mí, Contacto y Footer**. El caso de estudio de Cubri Seguros se despliega dentro de la sección Proyectos, sin páginas internas.
+Es un sitio **one-page** con navegación por anclas y nueve áreas de contenido: **Header/Navegación, Hero, Métricas, Skills, Proyectos, Experiencia/Formación, Sobre mí, Contacto y Footer**. Incluye un caso de estudio de Cubri Seguros desplegable dentro de **Proyectos**, sin navegación a una ficha interna.
 
-Los tres trabajos mostrados son académicos:
+Las métricas reflejan trabajo académico (3 proyectos, 20 ejercicios HTML/CSS y 3 áreas de especialidad), sin atribuir experiencia profesional que todavía no corresponde. El título **«MIS ESPECIALIDADES»** se mantiene en desktop y mobile.
 
-| Proyecto | Enlace |
-| --- | --- |
-| Coffea — Coffee Shop | https://github.com/FedeD19/coffea-landing |
-| Cubri Seguros — Checkout | https://cubriseguros.netlify.app/ |
-| TP3 — Fundamentos de HTML y CSS | https://github.com/FedeD19/TP3-Dise-o-UX-UI---HTML-CSS |
+### Proyectos destacados
 
-## Tecnologías
+| Proyecto | Descripción | Destino de «Ver proyecto» |
+| --- | --- | --- |
+| **Coffea — Coffee Shop** | Maquetación responsive a partir de un diseño de Figma. | [Repositorio GitHub](https://github.com/FedeD19/coffea-landing) |
+| **Cubri Seguros — Checkout** | Contratación simulada de seguros: cotización, planes, datos, validaciones y pago de prueba. | [Demo Netlify](https://cubriseguros.netlify.app/) |
+| **TP3 — Fundamentos HTML y CSS** | 20 ejercicios y landing integradora **DevFede**. | [Repositorio GitHub](https://github.com/FedeD19/TP3-Dise-o-UX-UI---HTML-CSS) |
 
-HTML5 semántico, CSS3 (variables de diseño, Flexbox, Grid y media queries) y JavaScript vanilla. **No se utilizaron React, Vue, Next.js ni constructores visuales**; no se necesita instalar dependencias ni compilar.
+Las tres tarjetas muestran capturas reales de los trabajos. La tarjeta de Cubri incluye una segunda acción, **«Leer caso de estudio»**, que despliega problema, proceso, recorrido, pantallas y aprendizajes en la misma página mediante `<details>` y `<summary>`.
+
+## Tecnologías y estructura
+
+- **HTML5** semántico, con títulos jerarquizados, navegación por anclas, un único `h1` y textos alternativos.
+- **CSS3** puro: design tokens (`:root`), Flexbox, Grid, media queries, estados interactivos y fondo turquesa continuo.
+- **JavaScript vanilla**: menú mobile, indicador de sección activa, acceso al caso de estudio y envío del formulario.
+- **Netlify** para hosting HTTPS, despliegue desde GitHub y recepción de formularios mediante Netlify Forms.
+- **Sin** React, Vue, Next.js, frameworks de JavaScript ni constructores visuales; **no hace falta compilar ni instalar dependencias**.
 
 ```text
-index.html                     Página one-page
-404.html                       Página de error personalizada (Netlify)
-netlify.toml                   Despliegue estático y encabezados
-robots.txt                     Archivo de indexación
-css/                           Design tokens, base, layout, componentes, responsive, case-study, contact-form
-js/                            Navegación, panel de caso de estudio y formulario
-assets/                        Fondo, imágenes de proyectos, retrato, favicon y Open Graph
-docs/                          Proceso, guía de entrega y validaciones
-scripts/configurar-url.ps1     Completar SEO al conocer la URL definitiva
+index.html                     Página principal con las 9 áreas
+404.html                       Página 404 personalizada
+robots.txt                     Reglas de indexación
+css/
+  tokens.css                   Colores, tamaños, espaciado y tipografía
+  base.css                     Estilos generales, fondo, accesibilidad y anclas
+  layout.css                   Contenedores y estructuras base
+  components.css               Navegación, tarjetas, timeline, botones y footer
+  responsive.css               Ajustes por breakpoint
+  case-study.css               Caso de estudio de Cubri
+  contact-form.css             Tarjeta, inputs y confirmación de contacto
+js/
+  main.js                      Menú, navegación y enlace activo
+  case-study.js                Control de apertura y foco del caso de estudio
+  contact-form.js              Envío y confirmación en la misma página
+assets/                        Fondo, favicon, foto, capturas y portada social
+scripts/configurar-url.ps1     Configuración final de metadatos y sitemap
+docs/                         Documentación y evidencias Lighthouse
 ```
 
-## Desarrollo local
+> **Estado exacto del ZIP:** no incluye `netlify.toml` ni `sitemap.xml`. La publicación está configurada desde Netlify; el sitemap y las URLs SEO definitivas pueden generarse con el script mencionado más abajo. `css/project-detail.css` permanece como archivo heredado, aunque ya no hay fichas internas de proyectos.
 
-1. Abrí esta carpeta en VS Code.
-2. Abrí `index.html` con **Live Server**, o ejecutá `py -m http.server 5500` desde una terminal de Windows.
-3. Visitá `http://127.0.0.1:5500/`.
-4. Verificá navegación, menú mobile, teclado, enlaces y el caso de estudio.
+## Ejecutar localmente
 
-El menú responsive utiliza `aria-expanded`, `aria-controls` y Escape. Se incluye un enlace **Saltar al contenido**, foco visible y respeto a `prefers-reduced-motion`. Las imágenes están optimizadas en WebP y las situadas fuera de la primera pantalla usan carga diferida. El fondo turquesa se mantiene sin cortes verticales.
+1. Abrí la carpeta del repositorio en VS Code.
+2. Ejecutá **Live Server** sobre `index.html` o corré `py -m http.server 5500` desde la raíz.
+3. Abrí `http://127.0.0.1:5500/`.
+4. Probá anclas, navbar desktop, menú mobile, teclado, proyectos, caso de estudio y maquetación responsive.
 
-## Publicación con Netlify (GitHub → CI/CD)
+**Importante:** el formulario muestra un aviso en Live Server porque los envíos reales se procesan solamente desde el sitio publicado en Netlify.
 
-1. Subí tu commit H10 a la rama `main` de este repositorio.
-2. En https://app.netlify.com/ elegí **Add new project → Import an existing project → GitHub**.
-3. Autorizá el acceso y seleccioná este repositorio y la rama `main`.
-4. Configuración del sitio: **Build command vacío** y **Publish directory `.`** (raíz). `netlify.toml` ya fija esta carpeta.
-5. Seleccioná **Deploy site / Publish** según el texto que muestre Netlify. Guardá la dirección HTTPS real.
-6. En PowerShell, desde la raíz del proyecto, ejecutá:
+## Despliegue y cambios posteriores
 
-   ```powershell
-   .\scripts\configurar-url.ps1 -SiteUrl "https://DOMINIO-REAL.netlify.app"
-   ```
+El portfolio está publicado en **Netlify** mediante un repositorio de GitHub. La rama de despliegue es `main`, con **build command vacío** y **publish directory `.`** (raíz del proyecto). Los cambios realizados con `git push origin main` actualizan el sitio mediante el flujo de despliegue conectado a GitHub.
 
-   Reemplazá el dominio de ejemplo por **tu URL real de Netlify**. Este paso fija `canonical`, `og:url`, `og:image` absoluto, genera `sitemap.xml`, actualiza `robots.txt` y deja la URL en este README.
+Para registrar mejoras:
 
-7. Revisá los archivos generados y hacé un **commit de ajuste post-deploy** para que Netlify los publique automáticamente:
+```powershell
+git status
+git add .
+git commit -m "docs: actualizar README y design system post H10"
+git push origin main
+```
 
-   ```powershell
-   git status
-   git add index.html README.md robots.txt sitemap.xml
-   git commit -m "docs: configurar URL publica y metadatos SEO"
-   git push origin main
-   ```
+### SEO: ajuste pendiente en el código incluido
 
-8. Abrí el sitio en la URL pública (no en Live Server) y ejecutá **Lighthouse en modo mobile**. Guardá captura de las cuatro categorías en `docs/capturas/`.
+La página cuenta con `<title>`, descripción, Open Graph básico, favicon, `viewport`, idioma `es` y `robots.txt`. Sin embargo, el `index.html` de este ZIP **todavía utiliza una ruta relativa para `og:image` y no incorpora `canonical` ni `og:url`**. Para completar esos metadatos y generar `sitemap.xml`, ejecutá:
 
-Guía detallada: [`docs/guia-entrega.md`](docs/guia-entrega.md).
+```powershell
+.\scripts\configurar-url.ps1 -SiteUrl "https://federicodriportfolio.netlify.app"
+```
 
-## Formulario de contacto (Netlify Forms)
+Revisá los archivos generados (`index.html`, `robots.txt`, `README.md`, `sitemap.xml`) antes de confirmarlos y subirlos a GitHub. El script también actualiza la línea de URL pública de este README; después de ejecutarlo, asegurate de conservar esta documentación actualizada.
 
-Contacto utiliza un formulario nativo de **nombre, email y mensaje**, con campos obligatorios,
-validación HTML5 y un campo antispam *honeypot*. No se publica el email del destinatario en el HTML.
-No requiere backend propio, ni API keys ni dependencias. `js/contact-form.js` mejora la experiencia
-mostrando un panel de confirmación dentro de la misma tarjeta, sin redirecciones, y permite escribir otro mensaje. Sin JavaScript, el envío HTML nativo puede mostrar la página de confirmación predeterminada de Netlify.
+## Contacto: formulario integrado con Netlify Forms
 
-**Activación en Netlify (imprescindible):**
+En la sección **Contacto**, el correo del destinatario ya **no se muestra como texto público ni mediante un enlace `mailto:`**. En su lugar hay una tarjeta oscura alineada con la estética del sitio: título **«Contame tu idea.»**, campos obligatorios **Nombre, Email y Mensaje**, botón turquesa **«Enviar mensaje»** y breve aviso sobre el uso de los datos.
 
-1. Abrí el sitio en Netlify → **Forms** → **Enable form detection**, si aún está desactivado.
-2. Hacé `git push origin main` para que Netlify vuelva a procesar el HTML estático y detecte `portfolio-contacto`.
-3. Probá el formulario en la **URL pública** con un mensaje realista; no funciona desde Live Server.
-4. Consultá Netlify → **Forms → portfolio-contacto** para comprobar la recepción.
-5. Opcionalmente, configurá una **notificación por email** desde el panel de Netlify, sin exponer la dirección en el repositorio.
+- Formulario HTML llamado **`portfolio-contacto`**, con `method="POST"`, `data-netlify="true"` y un campo antispam **honeypot** (`bot-field`).
+- Validación HTML5: nombre de al menos 2 caracteres, email con formato válido y mensaje de al menos 10 caracteres, además de límites de longitud.
+- `js/contact-form.js` envía el contenido mediante `fetch()` con codificación `application/x-www-form-urlencoded`. Si Netlify acepta el envío, los campos se sustituyen por la confirmación **«¡Mensaje enviado!»** y el botón **«Escribir otro mensaje»**, **sin cambiar de página**.
+- Si falla el envío, se muestra un aviso de error y se mantienen los datos para reintentar. Con JavaScript desactivado, la confirmación puede pasar a la página predeterminada de Netlify.
+- **Validado en producción:** Netlify muestra `portfolio-contacto` entre los formularios activos y registró un envío de prueba en *Verified submissions*. El usuario confirmó también la confirmación integrada y el botón para escribir otro mensaje.
+- **Notificaciones:** se configuró en Netlify una alerta por correo ante nuevos envíos; la entrega efectiva de esas notificaciones debe comprobarse por separado.
 
-> Importante: quitar el correo del HTML actual no borra sus apariciones en commits históricos
-> de GitHub ni posibles versiones ya publicadas. Para reducir exposición futura no se repite
-> en la página, pero los datos históricos podrían seguir accesibles.
+No se publica una dirección personal como destinataria en el HTML actual. Esto **no borra automáticamente** posibles direcciones expuestas en versiones o commits antiguos. Netlify procesa y almacena los datos enviados: revisar sus ajustes de retención, antispam y notificaciones.
 
-## Diseño y proceso UX/UI
+## Diseño visual y accesibilidad
 
-El proceso se realiza en Figma: definición de usuario objetivo, escenario de uso, benchmark de tres portfolios, moodboard, arquitectura/card sorting, wireframes desktop y mobile, design system, prototipos, y test con al menos tres participantes. Se recomienda registrar tareas, observaciones y cambios aplicados. No se incluyen hallazgos inventados.
+- Identidad visual: **fondo turquesa texturizado**, titulares negros, superficies oscuras, acento turquesa claro y tipografía **Inter**.
+- Diseño **mobile-first**: menú hamburguesa por debajo de 768 px; navbar horizontal en desktop; contenidos que pasan de una a dos o más columnas según la sección.
+- Interacción: navegación mediante anclas y sección activa, foco visible, enlace **Saltar al contenido**, `aria-expanded` en menú, cierre con Escape, y respeto de `prefers-reduced-motion`.
+- **Ajustes post-H10 de anclas:** `css/base.css` compensa las distintas separaciones superiores de Skills, Experiencia y Sobre mí en desktop, conservando el desplazamiento aprobado de Inicio, Proyectos y Contacto.
+- Imágenes **WebP** con textos alternativos, dimensiones explícitas y carga diferida fuera de la primera pantalla.
 
-- [`docs/design-system.md`](docs/design-system.md): variables y decisiones visuales.
-- [`docs/guia-entrega.md`](docs/guia-entrega.md): requisitos de la consigna y pasos finales.
-- [`docs/validacion-final.md`](docs/validacion-final.md): checklist de accesibilidad, Lighthouse y responsive.
-- [`docs/plantilla-proceso-uxui.md`](docs/plantilla-proceso-uxui.md): esquema para la presentación y test de usabilidad.
-- [`docs/historial-hitos.md`](docs/historial-hitos.md): documentación histórica de H1 a H9.
+### Evidencias de Lighthouse incluidas
 
-## Recursos y créditos
+El directorio [`docs/capturas/`](docs/capturas/) contiene cuatro capturas hechas sobre el sitio público:
 
-- **Coffea:** implementación a partir de una plantilla pública de Figma; el diseño de referencia no se atribuye como original.
-- **Cubri Seguros:** ejercicio académico basado en pantallas de referencia y un checkout con pago simulado.
-- **TP3:** ejercicios de fundamentos de HTML y CSS, incluida la landing integradora ficticia DevFede.
-- **Fotografía personal:** aportada por el autor. Capturas de proyectos aportadas por el autor y optimizadas para la web.
-- **Fondo turquesa:** recurso de imagen aportado para el proyecto. **Comprobar crédito y licencia del autor original** antes de presentar la entrega.
-- **Tipografía:** Inter desde Google Fonts con fuentes de sistema alternativas.
+| Categoría | Puntuación que figura en la captura | Evidencia |
+| --- | ---: | --- |
+| Rendimiento | **97** | [`captura_rendimiento.png`](docs/capturas/captura_rendimiento.png) |
+| Accesibilidad | **100** | [`captura_accesibilidad.png`](docs/capturas/captura_accesibilidad.png) |
+| Prácticas recomendadas | **100** | [`captura_practicasrecomendadas.png`](docs/capturas/captura_practicasrecomendadas.png) |
+| SEO | **100** | [`captura_seo.png`](docs/capturas/captura_seo.png) |
 
-## Accesibilidad y verificación
+**Alcance de la evidencia:** en la captura de SEO se lee **«Escritorio emulado»**. Por eso, aunque las puntuaciones cumplen el umbral de 90 en esa ejecución, **no se deben presentar como auditoría mobile verificada** hasta repetir Lighthouse seleccionando **Mobile** y guardar la evidencia correspondiente. Lighthouse tampoco certifica por sí solo cumplimiento completo de **WCAG 2.2 AA**: siguen siendo necesarias comprobaciones manuales de foco, navegación y contraste.
 
-Objetivo: **WCAG 2.2 AA** y **Lighthouse mobile ≥ 90** en Performance, Accessibility, Best Practices y SEO. El cumplimiento completo **no queda certificado por el código**: se debe evaluar en el sitio público y validar manualmente navegación por teclado, contraste en fondos fotográficos y tareas de usabilidad. La captura de Lighthouse y los hallazgos reales deben incorporarse a la entrega.
+## Proceso UX/UI y entrega académica
 
-**Nota sobre redes:** por decisión del autor, Contacto/Footer enlazan GitHub y el formulario de contacto (sin publicar la dirección personal), sin LinkedIn. La consigna académica pide LinkedIn más otra red; confirmar la excepción con el docente.
+Los materiales de Figma deben acreditar proto-persona, escenario de uso, benchmark de tres portfolios, moodboard, sitemap/card sorting, wireframes mobile y desktop, design system, prototipos y pruebas de usabilidad con **al menos tres personas**. Los hallazgos y cambios deben ser reales y estar documentados. También corresponde entregar una presentación o PDF de hasta 10 diapositivas.
 
-## Uso de IA
+- [`docs/design-system.md`](docs/design-system.md) — especificaciones y decisiones visuales actualizadas (incluido el formulario post-H10).
+- [`docs/guia-entrega.md`](docs/guia-entrega.md) — guía preparada durante H10; algunas referencias a pasos pendientes pueden haber quedado desactualizadas.
+- [`docs/validacion-final.md`](docs/validacion-final.md) — checklist elaborado para H10; contrastar sus pendientes con el estado actual.
+- [`docs/plantilla-proceso-uxui.md`](docs/plantilla-proceso-uxui.md) — estructura sugerida para la presentación.
+- [`docs/historial-hitos.md`](docs/historial-hitos.md) — registro histórico; describe etapas que luego cambiaron, por lo que no constituye la especificación actual.
 
-El código HTML/CSS/JavaScript y la documentación H1–H10 se desarrollaron con asistencia de ChatGPT. El autor revisa, modifica y prueba los entregables en Live Server, realiza sus propios commits y debe validar el resultado público. La investigación, los resultados de pruebas y las decisiones UX finales deben documentarse con evidencia real.
+**Redes:** Contacto y Footer muestran GitHub, sin LinkedIn. Esto refleja una elección del autor, pero difiere del requisito literal del trabajo final, que solicita LinkedIn y al menos otra red; conviene validarlo con el docente. El caso de estudio se presenta mediante un panel desplegable integrado, no como una página/modal independiente; corresponde confirmar que ese formato sea aceptado.
+
+## Créditos y fuentes
+
+- **Figma:** prototipo personal utilizado para el layout desktop y mobile; falta incluir el enlace compartido.
+- **Coffea:** implementación académica a partir de una plantilla pública de Figma; no se atribuye el diseño base como propio.
+- **Cubri Seguros:** ejercicio de checkout con contratación y pago simulados.
+- **TP3:** ejercicios académicos de HTML/CSS y landing ficticia DevFede.
+- **Fotografía y capturas de proyectos:** proporcionadas por el autor.
+- **Fondo turquesa:** imagen aportada al proyecto; confirmar autoría, licencia o atribución si corresponde.
+- **Fuente:** Inter servida desde Google Fonts con `display=swap` y alternativas del sistema.
+- **Asistencia de IA:** ChatGPT colaboró en la estructura, código, ajustes y documentación; el autor realizó personalizaciones, pruebas, commits y publicación. No se atribuyen resultados inventados de investigación o pruebas.
