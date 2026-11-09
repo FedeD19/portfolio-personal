@@ -21,7 +21,9 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/case-study.css">
   <script src="js/main.js" defer></script>
+  <script src="js/case-study.js" defer></script>
   <title>Federico Dri | Portfolio personal</title>
 </head>
 <body>
@@ -159,7 +161,10 @@
             <p class="project-card__description">Contratación simulada de seguros: cotización, selección de planes, datos personales, validaciones y pago de prueba.</p>
             <p class="project-card__tags">UX/UI · JavaScript · Basecoat UI</p>
             <p class="project-card__learning"><strong>Aprendizaje:</strong> gestionar un flujo multipaso y mantener coherente el estado de los formularios.</p>
-            <a class="project-card__link" href="https://cubriseguros.netlify.app/" target="_blank" rel="noopener noreferrer">Ver proyecto <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a>
+            <div class="project-card__actions">
+              <a class="project-card__link" href="https://cubriseguros.netlify.app/" target="_blank" rel="noopener noreferrer">Ver proyecto <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a>
+              <a class="project-card__case-link" href="#caso-cubri" aria-controls="caso-cubri" aria-expanded="false">Leer caso de estudio <span aria-hidden="true">↓</span></a>
+            </div>
           </article>
 
           <article class="project-card" aria-labelledby="project-tp3-title">
@@ -174,6 +179,95 @@
             <a class="project-card__link" href="https://github.com/FedeD19/TP3-Dise-o-UX-UI---HTML-CSS" target="_blank" rel="noopener noreferrer">Ver proyecto <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a>
           </article>
         </div>
+
+        <!-- H9 — caso de estudio en la misma página, desplegable y accesible con teclado. -->
+        <details class="case-study" id="caso-cubri">
+          <summary class="case-study__summary">
+            <span class="case-study__summary-kicker">Caso de estudio / Cubri Seguros</span>
+            <span class="case-study__summary-title">Del diseño de Figma a un checkout funcional</span>
+            <span class="case-study__summary-icon" aria-hidden="true">+</span>
+          </summary>
+
+          <div class="case-study__content">
+            <header class="case-study__header">
+              <div>
+                <p class="case-study__eyebrow">UX/UI · Desarrollo front-end · 2026</p>
+                <h3 id="titulo-caso-cubri">Cubri Seguros: contratación digital de un seguro</h3>
+                <p>Trabajo práctico académico. Construí una experiencia responsive de contratación simulada de seguros para celulares, a partir de un diseño de Figma proporcionado para la consigna.</p>
+              </div>
+              <a class="case-study__demo" href="https://cubriseguros.netlify.app/" target="_blank" rel="noopener noreferrer">Probar la demo <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a>
+            </header>
+
+            <dl class="case-study__facts">
+              <div><dt>Tipo de proyecto</dt><dd>Trabajo práctico de UX/UI</dd></div>
+              <div><dt>Enfoque</dt><dd>Checkout responsive y validaciones</dd></div>
+              <div><dt>Herramientas</dt><dd>HTML · Tailwind · Basecoat UI · JavaScript</dd></div>
+            </dl>
+
+            <section class="case-study__chapter" aria-labelledby="caso-cubri-problema">
+              <h4 id="caso-cubri-problema">01 / Problema y objetivo</h4>
+              <p>El desafío de la consigna era convertir las pantallas de referencia en un recorrido completo de contratación: elegir un producto, cotizarlo, seleccionar una cobertura, ingresar datos, simular un pago y recibir un resultado claro. Todo debía funcionar en mobile y desktop sin utilizar un backend ni procesar pagos reales.</p>
+            </section>
+
+            <section class="case-study__chapter" aria-labelledby="caso-cubri-proceso">
+              <h4 id="caso-cubri-proceso">02 / Proceso de diseño e implementación</h4>
+              <ol class="case-study__process">
+                <li><strong>Análisis de las pantallas:</strong> tomé como referencia siete vistas desktop y sus siete equivalentes mobile del archivo Figma de la práctica.</li>
+                <li><strong>Estructura y diseño:</strong> reutilicé componentes y tokens, y adapté el catálogo, el stepper, las tarjetas y los formularios a los distintos anchos.</li>
+                <li><strong>Flujo y estado:</strong> organicé las etapas en una única página y un objeto de estado para conservar la información cuando el usuario avanza o retrocede.</li>
+                <li><strong>Validaciones y resultados:</strong> agregué mensajes de error en los campos, planes calculados desde un JSON local y estados de aprobación o rechazo de pago simulado.</li>
+              </ol>
+            </section>
+
+            <section class="case-study__chapter" aria-labelledby="caso-cubri-flujo">
+              <h4 id="caso-cubri-flujo">03 / Recorrido del usuario</h4>
+              <ol class="case-study__flow">
+                <li>Catálogo</li><li>Cotización</li><li>Plan</li><li>Datos</li><li>Pago</li><li>Éxito o error</li>
+              </ol>
+              <p>El paso de pago es una simulación. La pantalla de éxito muestra una póliza ficticia, mientras que el rechazo permite reintentar sin volver a completar toda la solicitud.</p>
+            </section>
+
+            <section class="case-study__chapter" aria-labelledby="caso-cubri-pantallas">
+              <h4 id="caso-cubri-pantallas">04 / Pantallas del proyecto</h4>
+              <p>Estas capturas provienen de la implementación académica de Cubri Seguros.</p>
+              <div class="case-study__gallery">
+                <figure class="case-study__shot">
+                  <img src="assets/projects/caso-cubri/catalogo.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Pantalla desktop inicial de Cubri Seguros con oferta de seguro para celular y catálogo de coberturas">
+                  <figcaption>01 · Catálogo y punto de entrada</figcaption>
+                </figure>
+                <figure class="case-study__shot">
+                  <img src="assets/projects/caso-cubri/planes.webp" width="1200" height="777" loading="lazy" decoding="async" alt="Selección de planes Básico, Plus y Premium en desktop, con resumen de cotización">
+                  <figcaption>02 · Comparación y selección de planes</figcaption>
+                </figure>
+                <figure class="case-study__shot">
+                  <img src="assets/projects/caso-cubri/pago.webp" width="1200" height="777" loading="lazy" decoding="async" alt="Formulario desktop para el pago simulado y resumen del seguro elegido">
+                  <figcaption>03 · Pago simulado y resumen</figcaption>
+                </figure>
+                <figure class="case-study__shot">
+                  <img src="assets/projects/caso-cubri/exito.webp" width="1200" height="803" loading="lazy" decoding="async" alt="Pantalla de confirmación del seguro con datos de la solicitud y número ficticio de póliza">
+                  <figcaption>04 · Confirmación de la solicitud</figcaption>
+                </figure>
+              </div>
+              <div class="case-study__mobile-gallery">
+                <figure class="case-study__shot case-study__shot--mobile">
+                  <img src="assets/projects/caso-cubri/mobile-datos.webp" width="390" height="844" loading="lazy" decoding="async" alt="Versión mobile del formulario de datos personales en Cubri Seguros">
+                  <figcaption>Formulario en mobile</figcaption>
+                </figure>
+                <figure class="case-study__shot case-study__shot--mobile">
+                  <img src="assets/projects/caso-cubri/mobile-error.webp" width="390" height="844" loading="lazy" decoding="async" alt="Versión mobile del resultado de pago rechazado, con opción para reintentar">
+                  <figcaption>Estado de error en mobile</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="case-study__chapter case-study__conclusion" aria-labelledby="caso-cubri-resultado">
+              <h4 id="caso-cubri-resultado">05 / Resultado y aprendizajes</h4>
+              <p>El resultado del trabajo es un prototipo web funcional que conecta el recorrido completo, conserva los datos entre pasos y contempla estados de éxito y error. No se trata de una contratación ni de un pago real.</p>
+              <p>El aprendizaje principal fue integrar una interfaz responsive con reglas de validación y estado compartido sin perder la coherencia visual. No presento métricas de conversión ni mejoras de usabilidad medidas, porque no forman parte de la documentación de este trabajo.</p>
+              <a class="case-study__demo" href="https://cubriseguros.netlify.app/" target="_blank" rel="noopener noreferrer">Abrir Cubri Seguros en Netlify <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a>
+            </section>
+          </div>
+        </details>
       </div>
     </section>
 
@@ -267,8 +361,6 @@
           <p class="contact-description">¿Tenés un proyecto en mente? Contame qué querés construir y encontremos la mejor forma de hacerlo.</p>
           <a class="contact-email" href="mailto:federicopauldri@gmail.com">federicopauldri@gmail.com</a>
           <ul class="contact-socials" aria-label="Redes de contacto">
-            <!-- TODO: reemplazar el texto por un enlace al recibir la URL real de LinkedIn. -->
-            <li><span class="social-pending" title="Falta confirmar el enlace a LinkedIn">LinkedIn (enlace pendiente)</span></li>
             <li><a href="https://github.com/FedeD19" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a></li>
           </ul>
         </div>
@@ -299,8 +391,6 @@
         </ul>
       </nav>
       <ul class="footer-socials" aria-label="Redes sociales">
-        <!-- TODO: incorporar URL personal de LinkedIn; no se usa un enlace ficticio. -->
-        <li><span class="social-pending" title="Falta confirmar el enlace a LinkedIn">LinkedIn (enlace pendiente)</span></li>
         <li><a href="https://github.com/FedeD19" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="visually-hidden"> (abre una pestaña nueva)</span></a></li>
       </ul>
       <div class="footer-bottom">

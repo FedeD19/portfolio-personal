@@ -1,0 +1,81 @@
+/* H9 — caso de estudio de Cubri Seguros, dentro de la página principal. */
+.section--projects .project-card__actions {
+  grid-area: link;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+  align-items: center;
+  align-self: end;
+  margin-top: 1.1rem;
+}
+.section--projects .project-card__actions .project-card__link { margin: 0; }
+.section--projects .project-card__case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  font-size: 0.9375rem;
+  font-weight: 750;
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.24rem;
+  text-decoration-thickness: 0.09rem;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+.section--projects .project-card__case-link:hover { color: #064d4b; }
+.section--projects .project-card__case-link:active { color: #055553; }
+.case-study { margin-top: clamp(3rem, 5vw, 5.5rem); scroll-margin-top: 7rem; border-top: 2px solid var(--color-ink); }
+.case-study__summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  padding: 1.6rem 0;
+  min-height: 5rem;
+  color: var(--color-ink);
+  -webkit-tap-highlight-color: transparent;
+}
+.case-study__summary::-webkit-details-marker { display: none; }
+.case-study__summary-kicker { grid-column: 1; font-size: 0.78rem; text-transform: uppercase; font-weight: 700; letter-spacing: .04em; }
+.case-study__summary-title { grid-column: 1; font-size: clamp(1.2rem, 3vw, 1.75rem); line-height: 1.18; font-weight: 800; letter-spacing: -.03em; }
+.case-study__summary-icon { grid-column: 2; grid-row: 1 / span 2; font-size: 2rem; line-height: 1; font-weight: 400; transition: transform .2s ease; }
+.case-study[open] .case-study__summary-icon { transform: rotate(45deg); }
+.case-study__summary:hover .case-study__summary-title { text-decoration: underline; text-underline-offset: 0.15em; }
+.case-study__summary:focus-visible, .project-card__case-link:focus-visible, .case-study__demo:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
+.case-study__content { padding: clamp(1.25rem, 4vw, 3rem); margin-bottom: 1rem; border: 1px solid rgba(16,20,20,.45); background: rgba(240,250,248,.87); color: #101414; }
+.case-study__header { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+.case-study__eyebrow { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.case-study__header h3 { max-width: 25ch; margin: .7rem 0 1rem; font-size: clamp(1.65rem, 3.2vw, 3.1rem); line-height: 1.12; letter-spacing: -.045em; text-transform: uppercase; }
+.case-study__header p:not(.case-study__eyebrow),.case-study__chapter p { max-width: 70ch; font-size: 1rem; line-height: 1.6; }
+.case-study__demo { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; max-width: 100%; padding: .9rem 1.25rem; min-height: 2.9rem; background: #101414; color: #fff; font-size: .9rem; font-weight: 750; text-decoration: none; text-align: center; }
+.case-study__demo:hover { background: #284c4b; }
+.case-study__demo:active { background: #396562; }
+.case-study__facts { display: grid; grid-template-columns: 1fr; gap: 1rem; border-block: 1px solid rgba(16,20,20,.35); margin: 2rem 0; padding: 1.5rem 0; }
+.case-study__facts div { min-width: 0; }
+.case-study__facts dt { font-size: .75rem; font-weight: 750; text-transform: uppercase; letter-spacing: .05em; }
+.case-study__facts dd { margin: .45rem 0 0; font-size: .95rem; line-height: 1.45; }
+.case-study__chapter { padding: 1.65rem 0; border-bottom: 1px solid rgba(16,20,20,.28); }
+.case-study__chapter h4 { max-width: 50ch; margin: 0 0 1.05rem; font-size: clamp(1.15rem, 2vw, 1.45rem); line-height: 1.3; font-weight: 800; text-transform: uppercase; }
+.case-study__chapter p + p { margin-top: 1rem; }
+.case-study__process { padding-left: 1.4rem; margin: 1.2rem 0 0; display: grid; gap: .8rem; font-size: .98rem; line-height: 1.6; }
+.case-study__flow { list-style: none; margin: 1.25rem 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; counter-reset: flow; }
+.case-study__flow li { display: inline-flex; align-items: center; min-height: 2.5rem; padding: .6rem .85rem; border: 1px solid rgba(16,20,20,.45); font-weight: 650; font-size: .88rem; }
+.case-study__flow li::before { counter-increment: flow; content: counter(flow,decimal-leading-zero) " / "; font-weight: 800; margin-right: .45rem; }
+.case-study__gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+.case-study__mobile-gallery { display: grid; grid-template-columns: repeat(2,minmax(0, 1fr)); gap: 1rem; max-width: 48rem; margin-top: 1.5rem; }
+.case-study__shot { margin: 0; min-width: 0; }
+.case-study__shot img { display: block; width: 100%; height: auto; border: 1px solid rgba(16,20,20,.22); background: #f5f7fb; }
+.case-study__shot figcaption { margin-top: .45rem; font-weight: 650; font-size: .85rem; line-height: 1.4; }
+.case-study__conclusion { border-bottom: 0; }
+.case-study__conclusion .case-study__demo { margin-top: 1.5rem; }
+@media (min-width: 768px) {
+  .case-study__content { padding: 3rem; }
+  .case-study__header { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+  .case-study__facts { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .case-study__gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-study__summary-icon, .section--projects .project-card__case-link { transition: none; }
+}

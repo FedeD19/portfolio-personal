@@ -2,7 +2,7 @@
 
 Trabajo Final de Diseño UX/UI (2026) · Licenciatura en Sistemas de Información.
 
-> **Estado actual: H8/10 — Sobre mí, Contacto y Footer.** Las nueve secciones de la página principal están maquetadas. El enlace personal de LinkedIn todavía requiere confirmación; H9–H10 quedan pendientes.
+> **Estado actual: H9/10 — Caso de estudio de Cubri Seguros.** Las nueve secciones de la página principal están maquetadas y el caso de estudio se presenta de forma desplegable dentro de Proyectos. Queda pendiente H10: revisión de accesibilidad, rendimiento, SEO y despliegue.
 
 ## Objetivo
 
@@ -33,8 +33,8 @@ El proyecto **no necesita** `npm install`, dependencias ni comandos de compilaci
 
 ```text
 index.html
-css/          tokens.css, base.css, layout.css, components.css, responsive.css
-js/           main.js
+css/          tokens.css, base.css, layout.css, components.css, responsive.css, case-study.css
+js/           main.js, case-study.js
 assets/       backgrounds/, projects/, profile/, icons/, og/
 docs/         documentación y capturas del proceso UX/UI
 ```
@@ -74,11 +74,11 @@ docs/         documentación y capturas del proceso UX/UI
   - **Coffea (GitHub):** https://github.com/FedeD19/coffea-landing
   - **Cubri Seguros (Netlify):** https://cubriseguros.netlify.app/
   - **TP3 — Fundamentos HTML/CSS (GitHub):** https://github.com/FedeD19/TP3-Dise-o-UX-UI---HTML-CSS
-- Las fichas `proyectos/coffea.html` y `proyectos/tp3.html` y el CSS destinado exclusivamente a ellas se eliminaron. En **H9** se preparará el **caso de estudio UX exigido por la consigna como un modal accesible** dentro de la página, manteniendo los enlaces «Ver proyecto» externos. Las URLs deberán comprobarse antes de entregar.
+- Las fichas `proyectos/coffea.html` y `proyectos/tp3.html` y el CSS destinado exclusivamente a ellas se eliminaron. En **H9** se incorporó el caso de estudio de Cubri Seguros como un panel desplegable `<details>` dentro de la página, manteniendo los enlaces «Ver proyecto» externos. Las URLs deberán comprobarse antes de entregar.
 - El TP3 contiene ejercicios y textos ficticios de práctica, no representa servicios profesionales reales.
 - Para el caso de Coffea se reconoce que el diseño de partida fue una plantilla de Figma; se destaca el trabajo de implementación.
 - El cambio del `h2` de Skills a **Mis especialidades** en ambas versiones está integrado; H3 y H4 no se modificaron.
-- Pruebas recomendadas: Live Server en 375, 390, 768, 1280 y 1920 px; comprobar que `#proyectos` sea navegable, que las seis áreas clicables de proyectos abran sus destinos externos, que no haya scroll horizontal y que el orden de foco sea coherente.
+- Pruebas recomendadas: Live Server en 375, 390, 768, 1280 y 1920 px; comprobar que `#proyectos` sea navegable, que las imágenes y enlaces «Ver proyecto» abran sus destinos externos, que no haya scroll horizontal y que el orden de foco sea coherente.
 
 ## H5 — Skills
 
@@ -117,8 +117,8 @@ docs/         documentación y capturas del proceso UX/UI
 - H5: Skills (completado).
 - H6: tarjetas de los tres proyectos, capturas y enlaces (completado).
 - H7: experiencia/formación (completado).
-- H8: sobre mí, contacto, footer y redes (completado salvo URL personal de LinkedIn).
-- H9: caso de estudio de Cubri Seguros en modal accesible (sin fichas internas; los enlaces de proyecto seguirán siendo externos).
+- H8: sobre mí, contacto, footer y redes (completado; se muestra GitHub en lugar de LinkedIn por decisión del alumno).
+- H9: caso de estudio de Cubri Seguros desplegable dentro de `index.html` (completado; los enlaces «Ver proyecto» siguen siendo externos).
 - H10: accesibilidad, performance, SEO, comparación Figma/sitio y despliegue automático.
 
 ## Entrega final (pendiente)
@@ -131,7 +131,7 @@ docs/         documentación y capturas del proceso UX/UI
 
 ## Uso de IA
 
-La estructura H1, los estilos globales H2, la navegación H3 y la composición Hero/Métricas H4, Skills H5, proyectos H6 trayectoria H7 y secciones personales H8 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
+La estructura H1, los estilos globales H2, la navegación H3, Hero/Métricas H4, Skills H5, proyectos H6, trayectoria H7, secciones personales H8 y caso de estudio H9 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
 
 ## H7 — Experiencia y formación
 
@@ -149,8 +149,18 @@ La estructura H1, los estilos globales H2, la navegación H3 y la composición H
 - Referencias: pantallas Figma `05 · Sobre mí` y `06/07 · Contacto + Footer`, en desktop 1920px y mobile 390px.
 - La fotografía personal proporcionada se redujo a 960px de ancho, convertida a WebP optimizado sin recortar ni retocar y se incluye con `alt` significativo, dimensiones y `loading="lazy"`.
 - Desktop: **Sobre mí** en dos columnas (retrato/identidad + presentación/tres principios). Mobile: foto centrada seguida de nombre, descripción y los principios en vertical.
-- Contacto: mantiene email real `federicopauldri@gmail.com` y CTA `mailto:`; incorpora enlace a GitHub `https://github.com/FedeD19` y deja LinkedIn **sin URL** hasta que se facilite el enlace personal. No se inventan perfiles ni se enlaza a páginas genéricas de LinkedIn. El Figma dibuja Instagram, pero GitHub es la red adicional confirmada en la implementación.
+- Contacto: mantiene el email `federicopauldri@gmail.com` y CTA `mailto:`; enlaza al perfil de GitHub `https://github.com/FedeD19` y no incluye LinkedIn, según la preferencia actual del alumno.
 - Footer: navegación por anclas, redes, © 2026 y créditos `HTML5, CSS3, JavaScript vanilla`.
 - Ningún archivo JS fue modificado; se mantienen intactos Hero, Skills, Proyectos y Experiencia de los hitos aprobados.
-- Para completar la consigna antes de H10: **sustituir los dos `span.social-pending` por enlaces reales al perfil personal de LinkedIn**, uno en Contacto y otro en Footer.
+- Para H10: revisar con el docente que Contacto y Footer muestren únicamente GitHub como red social: la consigna original solicita específicamente LinkedIn más otra red, por lo que esta elección podría dejar ese punto sin cumplir.
 - Verificar en Live Server los tamaños 375, 390, 768, 1280 y 1920 px; comprobar que la imagen se vea completa, el email abra el cliente de correo, GitHub abra en nueva pestaña y no haya scroll horizontal.
+
+
+## H9 — Caso de estudio de Cubri Seguros (en la misma página)
+
+- En `index.html`, la tarjeta de Cubri mantiene **Ver proyecto** como enlace a `https://cubriseguros.netlify.app/`.
+- **Leer caso de estudio** abre el `<details id="caso-cubri">` situado debajo de las tres tarjetas, sin páginas internas, iframes ni modal.
+- El resumen del `<details>` también se puede abrir y cerrar con teclado sin JavaScript. `js/case-study.js` conecta el enlace de la tarjeta con el panel y sincroniza `aria-expanded`.
+- Se documentan problema, proceso, flujo, seis capturas originales (desktop y mobile), resultado y aprendizajes. Se aclara que los pagos y las pólizas son simulados; no se afirman mejoras cuantitativas sin evidencia.
+- Contacto y Footer muestran GitHub, sin textos pendientes de LinkedIn. **Nota para H10:** la consigna original del trabajo final sí solicita LinkedIn y otra red además de email; revisar este requisito antes de la entrega según las indicaciones del docente.
+- Nuevos archivos: `css/case-study.css`, `js/case-study.js` y `assets/projects/caso-cubri/`.

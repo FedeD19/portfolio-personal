@@ -72,7 +72,7 @@ H3 ya implementó la navbar flotante horizontal en desktop, la cabecera redondea
 - Mobile: una sola columna y orden natural de lectura (año, título, imagen, descripción, herramientas, aprendizaje y enlace).
 - El título del bloque cambia según la exportación de Figma: «Proyectos recientes» desktop y «Ideas que toman forma.» mobile. El encabezado sigue siendo un solo `h2`.
 - Imágenes optimizadas en WebP: capturas suministradas por el alumno, completas y sin recortar textos o logos gracias a `object-fit: contain`.
-- Enlaces: cada captura y su enlace «Ver proyecto» apuntan a un destino externo en nueva pestaña: Coffea y TP3 a sus repositorios GitHub, Cubri Seguros a Netlify. No hay fichas internas. El caso de estudio de H9 se resolverá como modal accesible sin alterar esos enlaces.
+- Enlaces: cada captura y su enlace «Ver proyecto» apuntan a un destino externo en nueva pestaña: Coffea y TP3 a sus repositorios GitHub, Cubri Seguros a Netlify. No hay fichas internas. El caso de estudio de H9 se incorporó como panel desplegable dentro de Proyectos, sin alterar esos enlaces.
 - H6 preserva el título de Skills «Mis especialidades» en todos los anchos y no modifica la maquetación del Hero aprobado en H4.
 
 ## H7 — Trayectoria / Experiencia
@@ -91,5 +91,14 @@ H3 ya implementó la navbar flotante horizontal en desktop, la cabecera redondea
 - Sobre mí desktop: grilla de dos columnas, foto al lado izquierdo, presentación y tres principios a la derecha; mobile: una columna y retrato centrado.
 - Los principios se presentan como lista `ol` sin tarjetas para coincidir con el diseño visual.
 - Contacto desktop: título y email a la izquierda, propuesta de colaboración, CTA y zona horaria a la derecha. Mobile: una columna, CTA negro por debajo de los enlaces, margen vertical amplio según Figma.
-- Footer negro con enlaces de anclas, GitHub y pendiente de LinkedIn, copyright y crédito tecnológico. El Figma mostraba Instagram como segundo vínculo, pero se usa GitHub porque su URL sí fue confirmada.
-- **Pendiente**: obtener y enlazar URL exacta de LinkedIn antes de la entrega final. Los rótulos de LinkedIn son informativos, NO enlaces falsos. Revisar contrastes WCAG AA y Lighthouse en H10.
+- Footer negro con enlaces de anclas, GitHub, copyright y crédito tecnológico. El Figma mostraba Instagram como segundo vínculo, pero se usa GitHub porque su URL sí fue confirmada.
+- **Para H10**: revisar contrastes WCAG AA y Lighthouse. El alumno decidió usar únicamente GitHub como red social; consultar la excepción con el docente, porque la consigna pide LinkedIn y al menos otra red.
+
+
+## H9 — Caso de estudio integrado
+
+- Patrón: `<details>`/`<summary>` nativos para expandir un caso de estudio dentro de Proyectos sin navegación a una nueva página.
+- El acceso se encuentra en la tarjeta Cubri Seguros, separado de «Ver proyecto» (demo externa).
+- Estilo: superficie clara semitransparente sobre el fondo turquesa; tipografía y bordes negros; grilla de capturas responsive 1/2 columnas y par de capturas mobile.
+- Accesibilidad: foco visible, control por teclado, estado `aria-expanded` sincronizado, contenido oculto cuando está cerrado, respeto de movimiento reducido.
+- Los enlaces LinkedIn pendientes se eliminan de Contacto y Footer en favor de un único enlace GitHub en cada área.
