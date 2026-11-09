@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# El sitemap se incorpora al ejecutar scripts/configurar-url.ps1 con el dominio real.

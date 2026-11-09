@@ -1,166 +1,102 @@
-# Portfolio personal — Federico Dri
+# Federico Dri — Portfolio personal
 
-Trabajo Final de Diseño UX/UI (2026) · Licenciatura en Sistemas de Información.
+Sitio personal desarrollado como **Trabajo Final de Diseño UX/UI (2026)**, Licenciatura en Sistemas de Información, UADER–FCyT.
 
-> **Estado actual: H9/10 — Caso de estudio de Cubri Seguros.** Las nueve secciones de la página principal están maquetadas y el caso de estudio se presenta de forma desplegable dentro de Proyectos. Queda pendiente H10: revisión de accesibilidad, rendimiento, SEO y despliegue.
+- **Sitio publicado:** pendiente de despliegue en Netlify.
+- **Figma (prototipo y proceso):** agregar URL pública con permiso de visualización.
+- **Repositorio:** GitHub (este repositorio).
+- **Estado:** H10/10, código listo para comprobación final y publicación desde GitHub.
 
-## Objetivo
+## Qué incluye
 
-Construir un portfolio personal **one-page**, responsive y accesible con HTML5 semántico, CSS3 (variables, Flexbox, Grid, media queries) y JavaScript vanilla. No se usan React, Vue, Next.js ni constructores visuales.
+Portfolio **one-page** con navegación mediante anclas, responsive y diseñado a partir de un prototipo propio de Figma. Contiene **Header, Hero, Métricas, Skills, Proyectos, Experiencia/Formación, Sobre mí, Contacto y Footer**. El caso de estudio de Cubri Seguros se despliega dentro de la sección Proyectos, sin páginas internas.
 
-## Cómo verlo localmente
+Los tres trabajos mostrados son académicos:
 
-1. Abrir esta carpeta en VS Code.
-2. Abrir `index.html` con una extensión de servidor local (por ejemplo, Live Server), o ejecutar desde la terminal: `python -m http.server 5500`.
-3. Visitar `http://localhost:5500/`.
-4. Probar la navegación por anclas y el menú de móvil con teclado (`Tab`, `Enter`, `Escape`).
+| Proyecto | Enlace |
+| --- | --- |
+| Coffea — Coffee Shop | https://github.com/FedeD19/coffea-landing |
+| Cubri Seguros — Checkout | https://cubriseguros.netlify.app/ |
+| TP3 — Fundamentos de HTML y CSS | https://github.com/FedeD19/TP3-Dise-o-UX-UI---HTML-CSS |
 
-El proyecto **no necesita** `npm install`, dependencias ni comandos de compilación.
+## Tecnologías
 
-## Secciones
-
-- Header / Navegación
-- Hero
-- Métricas
-- Skills
-- Proyectos (Coffea, Cubri Seguros y TP3 — Fundamentos de HTML y CSS)
-- Experiencia / Formación
-- Sobre mí
-- Contacto
-- Footer
-
-## Estructura
+HTML5 semántico, CSS3 (variables de diseño, Flexbox, Grid y media queries) y JavaScript vanilla. **No se utilizaron React, Vue, Next.js ni constructores visuales**; no se necesita instalar dependencias ni compilar.
 
 ```text
-index.html
-css/          tokens.css, base.css, layout.css, components.css, responsive.css, case-study.css
-js/           main.js, case-study.js
-assets/       backgrounds/, projects/, profile/, icons/, og/
-docs/         documentación y capturas del proceso UX/UI
+index.html                     Página one-page
+404.html                       Página de error personalizada (Netlify)
+netlify.toml                   Despliegue estático y encabezados
+robots.txt                     Archivo de indexación
+css/                           Design tokens, base, layout, componentes, responsive, case-study
+js/                            Navegación y panel de caso de estudio
+assets/                        Fondo, imágenes de proyectos, retrato, favicon y Open Graph
+docs/                          Proceso, guía de entrega y validaciones
+scripts/configurar-url.ps1     Completar SEO al conocer la URL definitiva
 ```
 
-## Accesibilidad y responsive (base H1 + H2)
+## Desarrollo local
 
-- Etiquetas HTML semánticas, `lang="es"`, un único `<h1>` y títulos jerárquicos.
-- Enlace «Saltar al contenido», focus visible y navegación mediante teclado.
-- Menú mobile con botón nativo, `aria-expanded`, `aria-controls`, Escape (devuelve el foco al botón), cierre al seleccionar enlace y al pulsar fuera.
-- `aria-current="location"` identifica la sección activa al desplazarse; el menú no duplica enlaces entre desktop y mobile.
-- Sin JS, la navegación móvil queda visible (degradación progresiva).
-- CSS mobile-first con puntos de control en 768 y 1200 px; también se probará a 375, 768 y 1280 px.
-- Respeto a `prefers-reduced-motion` para scroll suave, animaciones y transiciones.
-- Fondo turquesa original sobre una capa fija `body::before`, sin repetición vertical; **comprobar visualmente** a 375/390 px y desktop en Live Server.
-- Navegación flotante centrada a partir de 768 px; menú colapsable hasta 767 px. Las anclas respetan el espacio del header sticky.
+1. Abrí esta carpeta en VS Code.
+2. Abrí `index.html` con **Live Server**, o ejecutá `py -m http.server 5500` desde una terminal de Windows.
+3. Visitá `http://127.0.0.1:5500/`.
+4. Verificá navegación, menú mobile, teclado, enlaces y el caso de estudio.
 
-**Pendiente:** validar contraste WCAG 2.2 AA y Lighthouse mobile (≥ 90 en las cuatro categorías) al finalizar. H3 no certifica todavía estas métricas.
+El menú responsive utiliza `aria-expanded`, `aria-controls` y Escape. Se incluye un enlace **Saltar al contenido**, foco visible y respeto a `prefers-reduced-motion`. Las imágenes están optimizadas en WebP y las situadas fuera de la primera pantalla usan carga diferida. El fondo turquesa se mantiene sin cortes verticales.
 
-## Recursos y contenidos
+## Publicación con Netlify (GitHub → CI/CD)
 
-- Prototipos de Figma: seis pantallas desktop y seis pantallas mobile, aportadas para este trabajo.
-- TP3: 20 ejercicios en tres bloques (básico, intermedio y medio/avanzado); incluye una landing integradora en el ejercicio 20.
-- Design System H2: ver [`docs/design-system.md`](docs/design-system.md) para colores, tipografía, espaciado y decisiones; los valores todavía pueden afinarse contra Figma.
-- Fuente principal: Inter mediante Google Fonts (`display=swap`), con alternativas locales de sistema.
-- Fondo: imagen aportada junto con el prototipo; confirmar crédito/licencia en la entrega final.
-- Imagen de Open Graph: captura del prototipo **provisional**; sustituirla por la captura del sitio final y cambiar `og:image` a una URL HTTPS absoluta en H10.
-- Capturas de los tres proyectos proporcionadas por el alumno e incorporadas en H6; retrato personal aportado por el alumno, optimizado a `assets/profile/federico-dri.webp` en H8.
-- Datos de experiencia, métricas y presentación: revisar junto con los textos personales definitivos antes de publicar.
+1. Subí tu commit H10 a la rama `main` de este repositorio.
+2. En https://app.netlify.com/ elegí **Add new project → Import an existing project → GitHub**.
+3. Autorizá el acceso y seleccioná este repositorio y la rama `main`.
+4. Configuración del sitio: **Build command vacío** y **Publish directory `.`** (raíz). `netlify.toml` ya fija esta carpeta.
+5. Seleccioná **Deploy site / Publish** según el texto que muestre Netlify. Guardá la dirección HTTPS real.
+6. En PowerShell, desde la raíz del proyecto, ejecutá:
 
+   ```powershell
+   .\scripts\configurar-url.ps1 -SiteUrl "https://DOMINIO-REAL.netlify.app"
+   ```
 
-## H6 — Proyectos
+   Reemplazá el dominio de ejemplo por **tu URL real de Netlify**. Este paso fija `canonical`, `og:url`, `og:image` absoluto, genera `sitemap.xml`, actualiza `robots.txt` y deja la URL en este README.
 
-- Proyectos definitivos: **Coffea**, **Cubri Seguros** y **TP3 — Fundamentos HTML y CSS**. Se reemplazaron los placeholders de H5 por imágenes tomadas de los archivos originales compartidos por el alumno.
-- Las tarjetas usan las **tres capturas WebP originales enviadas por el alumno** (Coffea, Cubri Seguros y DevFede/TP3). Se optimizaron al ancho máximo de 1100 px sin cambiar su contenido. No se incorporaron imágenes genéricas ni fichas internas.
-- Desktop: dos columnas con año, título, captura completa, descripción, herramientas, aprendizaje y enlace. Mobile: tarjetas apiladas manteniendo el orden de lectura semántico y el encabezado del Figma mobile.
-- Tanto la captura como **«Ver proyecto»** abren el destino externo en nueva pestaña (`target="_blank"` + `rel="noopener noreferrer"`):
-  - **Coffea (GitHub):** https://github.com/FedeD19/coffea-landing
-  - **Cubri Seguros (Netlify):** https://cubriseguros.netlify.app/
-  - **TP3 — Fundamentos HTML/CSS (GitHub):** https://github.com/FedeD19/TP3-Dise-o-UX-UI---HTML-CSS
-- Las fichas `proyectos/coffea.html` y `proyectos/tp3.html` y el CSS destinado exclusivamente a ellas se eliminaron. En **H9** se incorporó el caso de estudio de Cubri Seguros como un panel desplegable `<details>` dentro de la página, manteniendo los enlaces «Ver proyecto» externos. Las URLs deberán comprobarse antes de entregar.
-- El TP3 contiene ejercicios y textos ficticios de práctica, no representa servicios profesionales reales.
-- Para el caso de Coffea se reconoce que el diseño de partida fue una plantilla de Figma; se destaca el trabajo de implementación.
-- El cambio del `h2` de Skills a **Mis especialidades** en ambas versiones está integrado; H3 y H4 no se modificaron.
-- Pruebas recomendadas: Live Server en 375, 390, 768, 1280 y 1920 px; comprobar que `#proyectos` sea navegable, que las imágenes y enlaces «Ver proyecto» abran sus destinos externos, que no haya scroll horizontal y que el orden de foco sea coherente.
+7. Revisá los archivos generados y hacé un **commit de ajuste post-deploy** para que Netlify los publique automáticamente:
 
-## H5 — Skills
+   ```powershell
+   git status
+   git add index.html README.md robots.txt sitemap.xml
+   git commit -m "docs: configurar URL publica y metadatos SEO"
+   git push origin main
+   ```
 
-- Referencias: `02 · Skills.png` (1920 × 1200) y `02 · Skills Mobile.png` (390 × 1026) del Figma actualizado.
-- `index.html`: la sección usa una lista ordenada semántica de tres especialidades; cada una incluye nombre, explicación y lista real de herramientas/conocimientos.
-- `css/layout.css`, `components.css`, `responsive.css` y `tokens.css`: ancho de referencia desktop 1360 px para esta sección, filas de tres columnas y separadores; en mobile se transforma en bloques verticales sin tablas ni duplicación de contenido.
-- El título del `h2` es **«MIS ESPECIALIDADES»** en desktop y mobile (ajuste solicitado después de H5); los spans de alternancia se retiraron únicamente del `h2`.
-- La descripción de lógica y programación es la de la captura desktop en todos los tamaños: la captura mobile tenía un texto distinto sobre diseño mobile-first, que no corresponde a la categoría. Se conservan las etiquetas académicas existentes **Algoritmos · Programación** para completar el contenido mínimo de herramientas o conocimientos.
-- No se alteraron los archivos JS ni el HTML/CSS del Hero, las métricas o la navbar (salvo añadir las reglas propias de Skills al final de los CSS existentes).
-- **Pruebas:** confirmar con Live Server los anchos 375, 390, 768, 1280 y 1920 px; líneas divisorias, ausencia de scroll horizontal, orden de lectura, ancla `#skills` y contraste legible sobre el fondo. No se afirma cumplimiento WCAG/Lighthouse hasta validación final.
+8. Abrí el sitio en la URL pública (no en Live Server) y ejecutá **Lighthouse en modo mobile**. Guardá captura de las cuatro categorías en `docs/capturas/`.
 
-## H4 — Hero y Métricas
+Guía detallada: [`docs/guia-entrega.md`](docs/guia-entrega.md).
 
-- `index.html`: el Hero ahora tiene tres líneas explícitas de título, agrupación de presentación y área de disponibilidad independiente. Ambos CTA son anclas nativas a `#proyectos` y `#contacto`.
-- `css/layout.css`, `components.css` y `responsive.css`: maquetación mobile-first con área principal y datos de disponibilidad al pie de la primera pantalla mobile; desktop coloca el contenido a la izquierda y aproxima la distribución del frame 1920 × 1200.
-- Mobile (referencia 390 × 1386): botones negros a ancho completo, título grande en tres líneas y **tres métricas en una sola fila**, con mínimo de alto para mantener el espacio del prototipo. En dispositivos de menos altura hará falta desplazarse para ver las métricas; es intencional.
-- Desktop (referencia 1920 × 1200): hero alineado al contenedor de 1120px, botones horizontales y barra oscura de métricas de ancho completo.
-- Los indicadores de H3 no se duplicaron ni se reescribió JavaScript.
-- Para evitar atribuir experiencia laboral no demostrada, las métricas muestran **3 proyectos académicos**, **20 ejercicios HTML/CSS** y **3 áreas de especialidad**, en lugar de los años de experiencia que todavía aparecen en el Figma.
-- El diseño requiere **validación visual con Live Server** a 375px, 390px, 768px, 1280px y 1920px, además de zoom al 200%, navegación por teclado y ausencia de scroll horizontal. H4 no equivale a certificación WCAG AA ni Lighthouse.
+## Diseño y proceso UX/UI
 
-## H3 — navegación y pruebas locales
+El proceso se realiza en Figma: definición de usuario objetivo, escenario de uso, benchmark de tres portfolios, moodboard, arquitectura/card sorting, wireframes desktop y mobile, design system, prototipos, y test con al menos tres participantes. Se recomienda registrar tareas, observaciones y cambios aplicados. No se incluyen hallazgos inventados.
 
-- A partir de **768 px**: menú horizontal flotante en cápsula translúcida centrada.
-- Por debajo de **768 px**: cabecera oscura con iniciales FD y botón hamburguesa; al abrir aparece un panel con los seis enlaces.
-- El menú se cierra al navegar, al pulsar Escape o al hacer clic fuera. Sin JavaScript, la lista de enlaces queda visible.
-- Se marca el enlace de la sección visible con `aria-current="location"`.
-- El fondo no utiliza `repeat-y` ni `background-size: auto 100vh`; la imagen se mantiene estática detrás de todas las secciones.
-- Verificaciones pendientes con Live Server: ancho **375 px**, **390 px**, **768 px** y **1280 px**; activar el menú con Enter/Espacio; usar Tab y Escape; saltar a Skills y Proyectos, comprobar que el título quede visible; recorrer la página en mobile y confirmar que no hay líneas de reinicio de fondo. El navegador automatizado del entorno de preparación no permitió completar estas comprobaciones.
+- [`docs/design-system.md`](docs/design-system.md): variables y decisiones visuales.
+- [`docs/guia-entrega.md`](docs/guia-entrega.md): requisitos de la consigna y pasos finales.
+- [`docs/validacion-final.md`](docs/validacion-final.md): checklist de accesibilidad, Lighthouse y responsive.
+- [`docs/plantilla-proceso-uxui.md`](docs/plantilla-proceso-uxui.md): esquema para la presentación y test de usabilidad.
+- [`docs/historial-hitos.md`](docs/historial-hitos.md): documentación histórica de H1 a H9.
 
-## Próximos hitos
+## Recursos y créditos
 
-- H2: design tokens, tipografía, fondo y estilos globales (completado).
-- H3: header/navegación final desktop y móvil; corrección del fondo (completado).
-- H4: Hero y métricas (completado).
-- H5: Skills (completado).
-- H6: tarjetas de los tres proyectos, capturas y enlaces (completado).
-- H7: experiencia/formación (completado).
-- H8: sobre mí, contacto, footer y redes (completado; se muestra GitHub en lugar de LinkedIn por decisión del alumno).
-- H9: caso de estudio de Cubri Seguros desplegable dentro de `index.html` (completado; los enlaces «Ver proyecto» siguen siendo externos).
-- H10: accesibilidad, performance, SEO, comparación Figma/sitio y despliegue automático.
+- **Coffea:** implementación a partir de una plantilla pública de Figma; el diseño de referencia no se atribuye como original.
+- **Cubri Seguros:** ejercicio académico basado en pantallas de referencia y un checkout con pago simulado.
+- **TP3:** ejercicios de fundamentos de HTML y CSS, incluida la landing integradora ficticia DevFede.
+- **Fotografía personal:** aportada por el autor. Capturas de proyectos aportadas por el autor y optimizadas para la web.
+- **Fondo turquesa:** recurso de imagen aportado para el proyecto. **Comprobar crédito y licencia del autor original** antes de presentar la entrega.
+- **Tipografía:** Inter desde Google Fonts con fuentes de sistema alternativas.
 
-## Entrega final (pendiente)
+## Accesibilidad y verificación
 
-- Sitio publicado por CI/CD desde GitHub a Netlify: **pendiente**.
-- URL del prototipo de Figma: **pendiente**.
-- Presentación del proceso UX/UI (máx. 10 diapositivas): **pendiente**.
-- Captura Lighthouse mobile: **pendiente**.
-- Investigación, benchmark, moodboard y pruebas con al menos 3 personas: documentar en Figma.
+Objetivo: **WCAG 2.2 AA** y **Lighthouse mobile ≥ 90** en Performance, Accessibility, Best Practices y SEO. El cumplimiento completo **no queda certificado por el código**: se debe evaluar en el sitio público y validar manualmente navegación por teclado, contraste en fondos fotográficos y tareas de usabilidad. La captura de Lighthouse y los hallazgos reales deben incorporarse a la entrega.
+
+**Nota sobre redes:** por decisión del autor, Contacto/Footer enlazan GitHub y correo electrónico, sin LinkedIn. La consigna académica pide LinkedIn más otra red; confirmar la excepción con el docente.
 
 ## Uso de IA
 
-La estructura H1, los estilos globales H2, la navegación H3, Hero/Métricas H4, Skills H5, proyectos H6, trayectoria H7, secciones personales H8 y caso de estudio H9 se prepararon con asistencia de ChatGPT. El código debe revisarse, probarse y personalizarse durante los siguientes hitos. Las decisiones UX/UI finales se documentarán en Figma.
-
-## H7 — Experiencia y formación
-
-- Referencias: `04 · Experiencia.png` (desktop 1920 px) y `04 · Experiencia Mobile.png` (390 px) del Figma actualizado.
-- Se muestran tres hitos de la trayectoria **académica**, no experiencia laboral inventada: portfolio personal (2026, aún en desarrollo), cursada de Diseño UX/UI (2026) e ingreso a la Licenciatura en Sistemas de Información en UADER FCyT (2023, carrera en curso).
-- Dos acciones o aprendizajes por hito, en una lista ordenada semántica de eventos y listas de viñetas. Para el portfolio se habla de preparación de la publicación, sin afirmar que ya está online.
-- La línea de tiempo usa un único eje vertical continuo y tres marcadores decorativos CSS (`aria-hidden` no es necesario en los pseudo-elementos). Mobile: fecha y contenido apilados a la derecha de la línea. Desde 768px: fecha a la izquierda y contenido a la derecha.
-- La sección tiene su propio contenedor ancho (máx. 1360 px) y estilos **encapsulados**, sin alterar Hero, Skills o Proyectos.
-- **Verificación:** 375, 390, 768, 1280 y 1920 px, navegación con `#experiencia`, ausencia de scroll horizontal y orden correcto con lector de pantalla; contraste y Lighthouse se revisan en H10.
-- Cuando se publique el portfolio, actualizar el primer hito para indicar que la publicación ya se concretó.
-
-
-## H8 — Sobre mí, Contacto y Footer
-
-- Referencias: pantallas Figma `05 · Sobre mí` y `06/07 · Contacto + Footer`, en desktop 1920px y mobile 390px.
-- La fotografía personal proporcionada se redujo a 960px de ancho, convertida a WebP optimizado sin recortar ni retocar y se incluye con `alt` significativo, dimensiones y `loading="lazy"`.
-- Desktop: **Sobre mí** en dos columnas (retrato/identidad + presentación/tres principios). Mobile: foto centrada seguida de nombre, descripción y los principios en vertical.
-- Contacto: mantiene el email `federicopauldri@gmail.com` y CTA `mailto:`; enlaza al perfil de GitHub `https://github.com/FedeD19` y no incluye LinkedIn, según la preferencia actual del alumno.
-- Footer: navegación por anclas, redes, © 2026 y créditos `HTML5, CSS3, JavaScript vanilla`.
-- Ningún archivo JS fue modificado; se mantienen intactos Hero, Skills, Proyectos y Experiencia de los hitos aprobados.
-- Para H10: revisar con el docente que Contacto y Footer muestren únicamente GitHub como red social: la consigna original solicita específicamente LinkedIn más otra red, por lo que esta elección podría dejar ese punto sin cumplir.
-- Verificar en Live Server los tamaños 375, 390, 768, 1280 y 1920 px; comprobar que la imagen se vea completa, el email abra el cliente de correo, GitHub abra en nueva pestaña y no haya scroll horizontal.
-
-
-## H9 — Caso de estudio de Cubri Seguros (en la misma página)
-
-- En `index.html`, la tarjeta de Cubri mantiene **Ver proyecto** como enlace a `https://cubriseguros.netlify.app/`.
-- **Leer caso de estudio** abre el `<details id="caso-cubri">` situado debajo de las tres tarjetas, sin páginas internas, iframes ni modal.
-- El resumen del `<details>` también se puede abrir y cerrar con teclado sin JavaScript. `js/case-study.js` conecta el enlace de la tarjeta con el panel y sincroniza `aria-expanded`.
-- Se documentan problema, proceso, flujo, seis capturas originales (desktop y mobile), resultado y aprendizajes. Se aclara que los pagos y las pólizas son simulados; no se afirman mejoras cuantitativas sin evidencia.
-- Contacto y Footer muestran GitHub, sin textos pendientes de LinkedIn. **Nota para H10:** la consigna original del trabajo final sí solicita LinkedIn y otra red además de email; revisar este requisito antes de la entrega según las indicaciones del docente.
-- Nuevos archivos: `css/case-study.css`, `js/case-study.js` y `assets/projects/caso-cubri/`.
+El código HTML/CSS/JavaScript y la documentación H1–H10 se desarrollaron con asistencia de ChatGPT. El autor revisa, modifica y prueba los entregables en Live Server, realiza sus propios commits y debe validar el resultado público. La investigación, los resultados de pruebas y las decisiones UX finales deben documentarse con evidencia real.

@@ -19,7 +19,7 @@ if (caseStudy && caseLink) {
     syncState();
     if (caseStudy.open) {
       // Un solo panel en la página; el enlace externo "Ver proyecto" no cambia.
-      caseStudy.scrollIntoView({ behavior: reducedMotion.matches ? 'instant' : 'smooth', block: 'start' });
+      caseStudy.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
       summary?.focus({ preventScroll: true });
     } else {
       caseLink.focus();

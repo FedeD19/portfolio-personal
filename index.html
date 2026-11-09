@@ -4,14 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#102322">
+  <meta name="author" content="Federico Dri">
   <meta name="description" content="Portfolio de Federico Dri, estudiante de Licenciatura en Sistemas de Información. Proyectos académicos de desarrollo web y diseño UX/UI.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
   <meta property="og:title" content="Federico Dri | Portfolio personal">
   <meta property="og:description" content="Proyectos de desarrollo web, HTML, CSS y UX/UI realizados durante mi formación.">
-  <!-- TODO H10: reemplazar con la URL HTTPS absoluta tras publicar el sitio. -->
+  <!-- H10: al conocer la URL definitiva, ejecutar scripts/configurar-url.ps1.
+       Ese script genera canonical, og:url, sitemap y URLs absolutas para imágenes sociales. -->
   <meta property="og:image" content="assets/og/portada-prototipo.webp">
+  <meta property="og:image:alt" content="Portfolio de Federico Dri: desarrollo web y proyectos académicos UX/UI">
+  <meta property="og:site_name" content="Portfolio de Federico Dri">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preload" href="assets/backgrounds/fondo-portfolio.webp" as="image" fetchpriority="high">
   <!-- Inter como aproximación visual; confirmar familia y pesos exactos en Figma. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +55,7 @@
     </div>
   </header>
 
-  <main id="contenido">
+  <main id="contenido" tabindex="-1">
     <!-- H4: Hero y métricas basados en las exportaciones desktop 1920px y mobile 390px. -->
     <section class="section section--hero" id="inicio" aria-labelledby="titulo-inicio">
       <div class="container hero-content">

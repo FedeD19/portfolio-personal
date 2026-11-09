@@ -254,3 +254,8 @@
 @media (max-width: 359px) {
   .section--contact .contact-email { font-size: 1.05rem; }
 }
+
+/* H10 — reflow para 320px y zoom alto, preservando tres líneas desde 360px. */
+@media (max-width: 359px) {
+  .hero-title__line { white-space: normal; overflow-wrap: anywhere; }
+}

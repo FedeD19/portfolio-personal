@@ -76,3 +76,16 @@ button { cursor: pointer; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* H10 — accesibilidad: foco visible en el destino del salto, sin añadir tabulación. */
+main:focus { outline: none; }
+/* Foco no oculto por el encabezado sticky (WCAG 2.2 AA 2.4.11). */
+:where(a, button, summary, [tabindex]):focus-visible {
+  scroll-margin-block: calc(var(--header-height) + 1rem) 1.5rem;
+}
+/* Reflow: evitar que palabras largas creen desplazamiento horizontal al aumentar zoom. */
+p, li, h1, h2, h3, h4 { overflow-wrap: break-word; }
+@media (forced-colors: active) {
+  :focus-visible { outline: 3px solid Highlight; box-shadow: none; }
+  .site-header__inner, .button { border: 1px solid CanvasText; }
+}

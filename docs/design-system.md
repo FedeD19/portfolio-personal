@@ -102,3 +102,14 @@ H3 ya implementó la navbar flotante horizontal en desktop, la cabecera redondea
 - Estilo: superficie clara semitransparente sobre el fondo turquesa; tipografía y bordes negros; grilla de capturas responsive 1/2 columnas y par de capturas mobile.
 - Accesibilidad: foco visible, control por teclado, estado `aria-expanded` sincronizado, contenido oculto cuando está cerrado, respeto de movimiento reducido.
 - Los enlaces LinkedIn pendientes se eliminan de Contacto y Footer en favor de un único enlace GitHub en cada área.
+
+## H10 — Accesibilidad, publicación y SEO
+
+- Se conserva la paleta y las composiciones de H1–H9, sin introducir frameworks ni un sistema visual distinto del prototipo.
+- `main#contenido` puede recibir foco programático al activar «Saltar al contenido»; las reglas de foco proporcionan desplazamiento seguro frente al header sticky.
+- Se permite el reflow del título del Hero por debajo de 360 px, evitando desbordamiento horizontal en 320 px sin cambiar las tres líneas del Figma en 390 px.
+- `prefers-reduced-motion` sigue desactivando el scroll suave y las transiciones para quienes solicitan menos movimiento; el script del caso de estudio utiliza `auto` como valor estándar.
+- Las imágenes de proyectos, el retrato, el fondo y la portada social permanecen en WebP. Los `img` declaran `width`, `height`, `alt` y carga diferida cuando aparecen debajo de la primera pantalla.
+- `netlify.toml` declara la raíz como directorio de publicación y suma encabezados básicos de seguridad. `404.html` conserva la identidad visual del portfolio.
+- Open Graph contiene imagen y descripción; la URL absoluta y canonical **se incorporan después de conocer la URL HTTPS real** mediante `scripts/configurar-url.ps1`.
+- El fondo fotográfico tiene zonas claras y oscuras; no asumir que toda superposición de texto satisface WCAG AA sin medir el contraste de las regiones concretas del diseño publicado.
